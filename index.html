@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,86 +9,66 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --blue: #1a2e4a; --accent: #2d5986; --text: #2a2a2a; --muted: #999; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #fafafa;
-    color: var(--text);
-    font-weight: 300;
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 0 24px 80px;
-  }
+  body { font-family: 'Inter', sans-serif; background: #fafafa; color: var(--text); font-weight: 300; max-width: 480px; margin: 0 auto; padding: 0 24px 80px; }
 
-  /* TOP NAV */
-  .topbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 0 0;
-    font-size: 12px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase;
-  }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 0 0; font-size: 12px; color: var(–muted); letter-spacing: 2px; text-transform: uppercase; }
 
-  /* PROFILE */
-  .profile { text-align: center; padding: 48px 0 36px; }
-  .avatar {
-    width: 96px; height: 96px; border-radius: 50%;
-    background: linear-gradient(135deg, #c8d8e8, #e8eef4);
-    margin: 0 auto 20px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px; font-weight: 200; color: var(--accent);
-    letter-spacing: -1px;
-  }
-  .name { font-size: 24px; font-weight: 500; color: var(--blue); letter-spacing: -0.5px; }
-  .name-kr { font-size: 13px; color: var(--muted); margin-top: 4px; }
-  .role-badge {
-    display: inline-block; margin-top: 14px;
-    background: #fff; border: 1px solid #e0e6ed;
-    color: var(--accent); font-size: 12px; letter-spacing: 1px;
-    padding: 8px 18px; border-radius: 999px;
-  }
-  .tagline { margin-top: 20px; font-size: 15px; color: var(--text); line-height: 1.7; }
-  .tagline-kr { font-size: 12px; color: var(--muted); margin-top: 4px; }
+/* PROFILE */
+.profile { text-align: center; padding: 40px 0 32px; }
+.avatar {
+width: 100px; height: 100px; border-radius: 50%;
+margin: 0 auto 20px;
+overflow: hidden;
+border: 3px solid #e8eef4;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.name { font-size: 24px; font-weight: 500; color: var(–blue); letter-spacing: -0.5px; }
+.name-kr { font-size: 13px; color: var(–muted); margin-top: 4px; }
+.role-badge { display: inline-block; margin-top: 14px; background: #fff; border: 1px solid #e0e6ed; color: var(–accent); font-size: 12px; letter-spacing: 1px; padding: 8px 18px; border-radius: 999px; }
+.tagline { margin-top: 20px; font-size: 15px; color: var(–text); line-height: 1.7; }
+.tagline-kr { font-size: 12px; color: var(–muted); margin-top: 4px; }
 
-  /* DIVIDER */
-  .divider { height: 1px; background: #ebebeb; margin: 32px 0; }
+.divider { height: 1px; background: #ebebeb; margin: 32px 0; }
+.label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(–muted); margin-bottom: 20px; }
 
-  /* SECTION LABEL */
-  .label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+/* SKILLS */
+.skills { display: flex; flex-direction: column; gap: 12px; }
+.skill { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 16px 20px; font-size: 14px; color: var(–text); line-height: 1.5; }
+.skill span { display: block; font-size: 11px; color: var(–muted); margin-top: 3px; }
 
-  /* WHAT I DO */
-  .skills { display: flex; flex-direction: column; gap: 12px; }
-  .skill { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 16px 20px; font-size: 14px; color: var(--text); line-height: 1.5; }
-  .skill span { display: block; font-size: 11px; color: var(--muted); margin-top: 3px; }
+/* WORK */
+.works { display: flex; flex-direction: column; }
+.work { padding: 16px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.work:first-child { border-top: 1px solid #f0f0f0; }
+.work-co { font-size: 13px; font-weight: 500; color: var(–blue); min-width: 100px; padding-top: 2px; }
+.work-desc { font-size: 13px; color: var(–muted); line-height: 1.6; text-align: right; }
 
-  /* WORK */
-  .works { display: flex; flex-direction: column; gap: 0; }
-  .work { padding: 16px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: start; gap: 16px; }
-  .work:first-child { border-top: 1px solid #f0f0f0; }
-  .work-co { font-size: 13px; font-weight: 500; color: var(--blue); min-width: 100px; padding-top: 2px; }
-  .work-desc { font-size: 13px; color: var(--muted); line-height: 1.6; text-align: right; }
+/* FIELD PHOTO */
+.field-section { margin: 32px 0; }
+.field-img { width: 100%; border-radius: 14px; overflow: hidden; position: relative; }
+.field-img img { width: 100%; display: block; object-fit: cover; max-height: 260px; }
+.field-caption { margin-top: 12px; font-size: 12px; color: var(–muted); line-height: 1.6; }
+.field-caption strong { color: var(–blue); font-weight: 500; }
 
-  /* PHILOSOPHY */
-  .phil { background: var(--blue); border-radius: 16px; padding: 36px 28px; margin: 32px 0; }
-  .phil p { font-size: 20px; font-weight: 200; color: #fff; line-height: 1.4; letter-spacing: -0.3px; }
-  .phil span { display: block; font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+/* PHILOSOPHY */
+.phil { background: var(–blue); border-radius: 16px; padding: 36px 28px; margin: 32px 0; }
+.phil p { font-size: 20px; font-weight: 200; color: #fff; line-height: 1.4; letter-spacing: -0.3px; }
+.phil span { display: block; font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 12px; }
 
-  /* LINKS */
-  .links { display: flex; flex-direction: column; gap: 10px; }
-  .link-row {
-    background: #fff; border: 1px solid #ebebeb; border-radius: 12px;
-    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
-    text-decoration: none; color: var(--text); transition: border-color .2s;
-  }
-  .link-row:hover { border-color: var(--accent); }
-  .link-left { display: flex; align-items: center; gap: 14px; }
-  .link-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--soft, #e8eef4); display: flex; align-items: center; justify-content: center; font-size: 16px; }
-  .link-title { font-size: 14px; font-weight: 400; color: var(--blue); }
-  .link-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .arrow { font-size: 14px; color: var(--muted); }
+/* LINKS */
+.links { display: flex; flex-direction: column; gap: 10px; }
+.link-row { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(–text); transition: border-color .2s; }
+.link-row:hover { border-color: var(–accent); }
+.link-left { display: flex; align-items: center; gap: 14px; }
+.link-icon { width: 36px; height: 36px; border-radius: 8px; background: #e8eef4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: var(–accent); }
+.link-title { font-size: 14px; font-weight: 400; color: var(–blue); }
+.link-sub { font-size: 12px; color: var(–muted); margin-top: 2px; }
+.arrow { font-size: 14px; color: var(–muted); }
 
-  /* NOTE */
-  .note { font-size: 12px; color: #bbb; text-align: center; margin-top: 32px; line-height: 1.7; font-style: italic; }
-
-  footer { text-align: center; margin-top: 48px; font-size: 11px; color: #ccc; letter-spacing: 1px; }
+.note { font-size: 12px; color: #bbb; text-align: center; margin-top: 32px; line-height: 1.7; font-style: italic; }
+footer { text-align: center; margin-top: 48px; font-size: 11px; color: #ccc; letter-spacing: 1px; }
 </style>
+
 </head>
 <body>
 
@@ -97,8 +78,11 @@
 </div>
 
 <!-- Profile -->
+
 <div class="profile">
-  <div class="avatar">JS</div>
+  <div class="avatar">
+    <img src="IMG_0669.jpeg" alt="Julia Shin" />
+  </div>
   <div class="name">Julia Shin</div>
   <div class="name-kr">신유진</div>
   <div class="role-badge">Early-Stage Strategy Designer</div>
@@ -109,6 +93,7 @@
 <div class="divider"></div>
 
 <!-- What I Do -->
+
 <div class="label">What I Do</div>
 <div class="skills">
   <div class="skill">Positioning Sprint
@@ -125,9 +110,10 @@
 <div class="divider"></div>
 
 <!-- Selected Work -->
+
 <div class="label">Selected Work</div>
 <div class="works">
-  <div class="work">
+  <div class="work"> 
     <div class="work-co">KakaoPay</div>
     <div class="work-desc">사업 확장 구조 재정의</div>
   </div>
@@ -145,13 +131,24 @@
   </div>
 </div>
 
+<!-- Field Photo -->
+
+<div class="field-section">
+  <div class="field-img">
+    <img src="IMG_0665.jpeg" alt="VivaTech Paris" />
+  </div>
+  <p class="field-caption"><strong>VivaTech, Paris</strong> — 글로벌 바이어 대상 AI 솔루션 세일즈 및 PoC 설명 현장. Samsung, LG Electronics, Hyundai 주요 클라이언트 보유 기업 대표로 참가.</p>
+</div>
+
 <!-- Philosophy -->
+
 <div class="phil">
   <p>From ambiguity<br>to scalable structure.</p>
   <span>모호함을 확장 가능한 구조로.</span>
 </div>
 
 <!-- Links -->
+
 <div class="label">Connect</div>
 <div class="links">
   <a href="https://www.linkedin.com/in/youjin-s" target="_blank" class="link-row">
