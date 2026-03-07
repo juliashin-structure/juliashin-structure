@@ -1,232 +1,483 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Julia Shin</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --blue: #1a2e4a; --accent: #2d5986; --text: #2a2a2a; --muted: #999; }
-  body { font-family: 'Inter', sans-serif; background: #fafafa; color: var(--text); font-weight: 300; max-width: 480px; margin: 0 auto; padding: 0 24px 40px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julia Shin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
 
-.topbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 0 0; font-size: 12px; color: var(-–muted); letter-spacing: 2px; text-transform: uppercase; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* PROFILE */
-.profile { text-align: center; padding: 40px 0 32px; }
-.avatar {
-width: 100px; height: 100px; border-radius: 50%;
-margin: 0 auto 20px;
-overflow: hidden;
-border: 3px solid #e8eef4;
-}
-.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.name { font-size: 24px; font-weight: 500; color: var(-–blue); letter-spacing: -0.5px; }
-.name-kr { font-size: 13px; color: var(-–muted); margin-top: 4px; }
-.role-badge { display: inline-block; margin-top: 14px; background: #fff; border: 1px solid #e0e6ed; color: var(–-accent); font-size: 12px; letter-spacing: 1px; padding: 8px 18px; border-radius: 999px; }
-.tagline { margin-top: 20px; font-size: 15px; color: var(a–text); line-height: 1.7; }
-.tagline-kr { font-size: 12px; color: var(–-muted); margin-top: 4px; }
+    :root {
+      --blue: #1a2e4a;
+      --accent: #2d5986;
+      --text: #2a2a2a;
+      --muted: #8e96a1;
+      --line: #ebedf0;
+      --card: #ffffff;
+      --bg: #fafafa;
+    }
 
-.divider { height: 1px; background: #ebebeb; margin: 20px 0; }
-.label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(-–muted); margin-bottom: 20px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-/* SKILLS */
-.skills { display: flex; flex-direction: column; gap: 12px; }
-.skill { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 16px 20px; font-size: 14px; color: var(-–text); line-height: 1.5; }
-.skill span { display: block; font-size: 11px; color: var(-–muted); margin-top: 3px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 0;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-/* WORK */
-.works { display: flex; flex-direction: column; }
-.work { padding: 16px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: start; gap: 16px; }
-.work:first-child { border-top: 1px solid #f0f0f0; }
-.work-co { font-size: 13px; font-weight: 500; color: var(–-blue); min-width: 100px; padding-top: 2px; }
-.work-desc { font-size: 13px; color: var(–-muted); line-height: 1.6; text-align: right; }
+    .profile {
+      text-align: center;
+      padding: 40px 0 30px;
+    }
 
-/* FIELD PHOTO */
-.field-section { margin: 32px 0; }
-.field-img { width: 100%; border-radius: 14px; overflow: hidden; position: relative; }
-.field-img img { width: 100%; display: block; object-fit: cover; max-height: 260px; }
-.field-caption { margin-top: 12px; font-size: 12px; color: var(–-muted); line-height: 1.6; }
-.field-caption strong { color: var(–-blue); font-weight: 500; }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      border: 3px solid #e8eef4;
+      background: #fff;
+    }
 
-/* PHILOSOPHY */
-.phil { background: var(–-blue); border-radius: 16px; padding: 36px 28px; margin: 16px 0; }
-.phil p { font-size: 20px; font-weight: 200; color: #fff; line-height: 1.4; letter-spacing: -0.3px; }
-.phil span { display: block; font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
 
-/* LINKS */
-.links { display: flex; flex-direction: column; gap: 10px; }
-.link-row { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(-–text); transition: border-color .2s; }
-.link-row:hover { border-color: var(-–accent); }
-.link-left { display: flex; align-items: center; gap: 14px; }
-.link-icon { width: 36px; height: 36px; border-radius: 8px; background: #e8eef4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: var(-–accent); }
-.link-title { font-size: 14px; font-weight: 400; color: var(–-blue); }
-.link-sub { font-size: 12px; color: var(–-muted); margin-top: 2px; }
-.arrow { font-size: 14px; color: var(–-muted); }
+    .name {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--blue);
+      letter-spacing: -0.5px;
+    }
 
-.note { font-size: 12px; color: #bbb; text-align: center; margin-top: 32px; line-height: 1.7; font-style: italic; }
-footer { text-align: center; margin-top: 48px; font-size: 11px; color: #ccc; letter-spacing: 1px; }
-</style>
+    .name-kr {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
 
+    .role-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: #fff;
+      border: 1px solid #dfe5ec;
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      margin-top: 18px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+      letter-spacing: -0.1px;
+    }
+
+    .tagline-kr {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
+    }
+
+    .label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .skill strong {
+      display: block;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .skill span {
+      display: block;
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 3px;
+      line-height: 1.6;
+    }
+
+    .works {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work {
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f1f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 16px;
+    }
+
+    .work:first-child {
+      border-top: 1px solid #f0f1f3;
+    }
+
+    .work-co {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--blue);
+      min-width: 108px;
+      padding-top: 2px;
+    }
+
+    .work-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    .field-section {
+      margin: 30px 0;
+    }
+
+    .field-img {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .field-img img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    .field-caption {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .field-caption strong {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .phil {
+      background: var(--blue);
+      border-radius: 16px;
+      padding: 34px 26px;
+      margin: 14px 0;
+    }
+
+    .phil p {
+      font-size: 20px;
+      font-weight: 200;
+      color: #fff;
+      line-height: 1.4;
+      letter-spacing: -0.3px;
+    }
+
+    .phil span {
+      display: block;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.38);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-row {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 15px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .link-row:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .link-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #e8eef4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .link-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--blue);
+    }
+
+    .link-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    .arrow {
+      font-size: 14px;
+      color: var(--muted);
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #a7adb5;
+      text-align: center;
+      margin-top: 30px;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 44px;
+      font-size: 11px;
+      color: #c6cad0;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="topbar">
-  <span>Julia Shin</span>
-  <span>2026</span>
-</div>
-
-<!-- Profile -->
-
-<div class="profile">
-  <div class="avatar">
-    <img src="IMG_0669.jpeg" alt="Julia Shin" />
-  </div>
-  <div class="name">Julia Shin</div>
-  <div class="name-kr">신유진</div>
-  <div class="role-badge">Early-Stage Strategy Designer</div>
-  <p class="tagline">I help early-stage teams clarify positioning<br>and design structure for growth.</p>
-  <p class="tagline-kr">시장 구조를 읽고 확장을 설계합니다.</p>
-</div>
-
-<div class="divider"></div>
-
-<!-- What I Do -->
-
-<div class="label">What I Do</div>
-<div class="skills">
-  <div class="skill">Positioning Sprint
-    <span>시장 구조 정리 · 타겟 재정의 · 메시지 설계 · Go-to-Market 방향성</span>
-  </div>
-  <div class="skill">Pitch & Proposal Structuring
-    <span>IR 덱 구조 · 제안서 스토리라인 · Problem → Solution 논리 재정렬</span>
-  </div>
-  <div class="skill">Strategy Workshop
-    <span>초기 창업팀 · PM · Web3/AI 팀 대상 집중 세션</span>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Selected Work -->
-
-<div class="label">Selected Work</div>
-<div class="works">
-  <div class="work"> 
-    <div class="work-co">KakaoPay</div>
-    <div class="work-desc">사업 확장 구조 재정의</div>
-  </div>
-  <div class="work">
-    <div class="work-co">DeltaX</div>
-    <div class="work-desc">위기 프로젝트 구조 복구</div>
-  </div>
-  <div class="work">
-    <div class="work-co">GE Healthcare</div>
-    <div class="work-desc">의사결정 대시보드 설계</div>
-  </div>
-  <div class="work">
-    <div class="work-co">VivaTech</div>
-    <div class="work-desc">글로벌 세일즈 / PoC</div>
-  </div>
-</div>
-
-<!-- Industries -->
-
-<div class="divider"></div>
-
-<div class="label">Industries</div>
-
-<div class="skills">
-
-  <div class="skill">
-    AI & Computer Vision
-    <span>DeltaX · mAy-I — AI 기반 차량 인식, 리테일 행동 데이터 분석</span>
+  <div class="topbar">
+    <span>Julia Shin</span>
+    <span>2026</span>
   </div>
 
-  <div class="skill">
-    FinTech & Cross-Border Payments
-    <span>KakaoPay — 월렛사 연동, 해외결제 구조 재설계, 운영 자동화</span>
-  </div>
-
-  <div class="skill">
-    Healthcare & Medical Devices
-    <span>GE Healthcare — 초음파 사업부 12개 조직 통합 대시보드</span>
-  </div>
-
-  <div class="skill">
-    Retail & Global B2B Expansion
-    <span>VivaTech · 글로벌 리테일 PoC 및 세일즈</span>
-  </div>
-
-</div>
-
-<!-- Field Photo -->
-
-<div class="field-section">
-  <div class="field-img">
-    <img src="IMG_0665.jpeg" alt="VivaTech Paris" />
-  </div>
-  <p class="field-caption"><strong>VivaTech, Paris</strong> — 글로벌 바이어 대상 AI 솔루션 세일즈 및 PoC 설명 현장. Samsung, LG Electronics, Hyundai 주요 클라이언트 보유 기업 대표로 참가.</p>
-</div>
-
-<!-- Philosophy -->
-
-<div class="phil">
-  <p>From ambiguity<br>to scalable structure.</p>
-  <span>모호함을 확장 가능한 구조로.</span>
-</div>
-
-<!-- Links -->
-
-<div class="label">Connect</div>
-<div class="links">
-  <a href="https://www.linkedin.com/in/youjin-s" target="_blank" class="link-row">
-    <div class="link-left">
-      <div class="link-icon">in</div>
-      <div>
-        <div class="link-title">LinkedIn</div>
-        <div class="link-sub">Julia Shin · youjin-s</div>
-      </div>
+  <div class="profile">
+    <div class="avatar">
+      <img src="IMG_0669.jpeg" alt="Julia Shin" />
     </div>
-    <span class="arrow">↗</span>
-  </a>
-</div>
+    <div class="name">Julia Shin</div>
+    <div class="name-kr">신유진</div>
+    <div class="role-badge">Early-Stage Strategy Designer</div>
+    <p class="tagline">I help early-stage teams clarify positioning<br />and design structure for growth.</p>
+    <p class="tagline-kr">시장 구조를 읽고 확장을 설계합니다.</p>
+  </div>
 
-<!-- Archive -->
-  
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<div class="label">Archive</div>
-<div class="links">
-
-  <a href="https://instagram.com/biztech.bridge" target="_blank" class="link-row">
-    <div class="link-left">
-      <div class="link-icon">BT</div>
-      <div>
-        <div class="link-title">BizTech Bridge</div>
-        <div class="link-sub">Platform · Brand Structure Notes</div>
-      </div>
+  <div class="label">What I Do</div>
+  <div class="skills">
+    <div class="skill">
+      <strong>Positioning Sprint</strong>
+      <span>시장 구조 정리 · 타겟 재정의 · 메시지 설계 · Go-to-Market 방향성</span>
     </div>
-    <span class="arrow">↗</span>
-  </a>
-
-  <a href="https://instagram.com/material.shift" target="_blank" class="link-row">
-    <div class="link-left">
-      <div class="link-icon">MS</div>
-      <div>
-        <div class="link-title">Material Shift</div>
-        <div class="link-sub">Supply Chain · Price Structure</div>
-      </div>
+    <div class="skill">
+      <strong>Pitch & Proposal Structuring</strong>
+      <span>IR 덱 구조 · 제안서 스토리라인 · Problem → Solution 논리 재정렬</span>
     </div>
-    <span class="arrow">↗</span>
-  </a> 
+    <div class="skill">
+      <strong>Strategy Workshop</strong>
+      <span>초기 창업팀 · PM · Web3/AI 팀 대상 집중 세션</span>
+    </div>
+  </div>
 
-</div>
+  <div class="divider"></div>
 
-<p class="note">Currently open to selective pilot collaborations.<br>포지셔닝 · 제안서 구조 · 전략 워크샵 협업 문의 환영합니다.</p>
+  <div class="label">Selected Work</div>
+  <div class="works">
+    <div class="work">
+      <div class="work-co">KakaoPay</div>
+      <div class="work-desc">사업 확장 구조 재정의</div>
+    </div>
+    <div class="work">
+      <div class="work-co">DeltaX</div>
+      <div class="work-desc">위기 프로젝트 구조 복구</div>
+    </div>
+    <div class="work">
+      <div class="work-co">GE Healthcare</div>
+      <div class="work-desc">의사결정 대시보드 설계</div>
+    </div>
+    <div class="work">
+      <div class="work-co">VivaTech</div>
+      <div class="work-desc">글로벌 세일즈 / PoC</div>
+    </div>
+  </div>
 
-<footer>© 2026 Julia Shin</footer>
+  <div class="divider"></div>
+
+  <div class="label">Industries</div>
+  <div class="skills">
+    <div class="skill">
+      <strong>AI & Computer Vision</strong>
+      <span>DeltaX · mAy-I — AI 기반 차량 인식, 리테일 행동 데이터 분석</span>
+    </div>
+    <div class="skill">
+      <strong>FinTech & Cross-Border Payments</strong>
+      <span>KakaoPay — 월렛사 연동, 해외결제 구조 재설계, 운영 자동화</span>
+    </div>
+    <div class="skill">
+      <strong>Healthcare & Medical Devices</strong>
+      <span>GE Healthcare — 초음파 사업부 12개 조직 통합 대시보드</span>
+    </div>
+    <div class="skill">
+      <strong>Retail & Global B2B Expansion</strong>
+      <span>VivaTech · 글로벌 리테일 PoC 및 세일즈</span>
+    </div>
+  </div>
+
+  <div class="field-section">
+    <div class="field-img">
+      <img src="IMG_0665.jpeg" alt="VivaTech Paris" />
+    </div>
+    <p class="field-caption">
+      <strong>VivaTech, Paris</strong> — 글로벌 바이어 대상 AI 솔루션 세일즈 및 PoC 설명 현장.
+      Samsung, LG Electronics, Hyundai 주요 클라이언트 보유 기업 대표로 참가.
+    </p>
+  </div>
+
+  <div class="phil">
+    <p>From ambiguity<br />to scalable structure.</p>
+    <span>모호함을 확장 가능한 구조로.</span>
+  </div>
+
+  <div class="label">Connect</div>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/youjin-s" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">in</div>
+        <div>
+          <div class="link-title">LinkedIn</div>
+          <div class="link-sub">Julia Shin · youjin-s</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <!-- Substack link: replace with your real Substack URL -->
+    <a href="https://substack.com/@outsidecorporations?r=54h6wx&utm_medium=ios&utm_source=profile&shareImageVariant=image" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">SS</div>
+        <div>
+          <div class="link-title">Substack</div>
+          <div class="link-sub">Essays on structure, leverage, and market interpretation</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="label">Archive</div>
+  <div class="links">
+    <a href="https://instagram.com/biztech.bridge" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">BT</div>
+        <div>
+          <div class="link-title">BizTech Bridge</div>
+          <div class="link-sub">Platform · Brand Structure Notes</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+
+    <a href="https://instagram.com/material.shift" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">MS</div>
+        <div>
+          <div class="link-title">Material Shift</div>
+          <div class="link-sub">Supply Chain · Price Structure</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <p class="note">
+    Currently open to selective pilot collaborations.<br />
+    포지셔닝 · 제안서 구조 · 전략 워크샵 협업 문의 환영합니다.
+  </p>
+
+  <footer>© 2026 Julia Shin</footer>
 
 </body>
 </html>
