@@ -5,104 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Julia Shin</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --blue: #1a2e4a;
-      --accent: #2d5986;
-      --text: #2a2a2a;
-      --muted: #8e96a1;
-      --line: #ebedf0;
-      --card: #ffffff;
-      --bg: #fafafa;
+      --blue:   #0d1f35;
+      --accent: #1e3a5f;
+      --hi:     #2563eb;
+      --text:   #1c2333;
+      --muted:  #64748b;
+      --faint:  #94a3b8;
+      --line:   #e2e8f0;
+      --card:   #ffffff;
+      --bg:     #f8f9fb;
+      --surface:#f1f5f9;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-weight: 300;
-      max-width: 480px;
+      font-weight: 400;
+      max-width: 500px;
       margin: 0 auto;
-      padding: 0 24px 40px;
+      padding: 0 24px 64px;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
+    /* ── TOPBAR ── */
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0 0;
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 2px;
+      padding: 22px 0 0;
+      font-size: 10px;
+      color: var(--faint);
+      letter-spacing: 2.5px;
       text-transform: uppercase;
+      font-weight: 600;
     }
 
+    /* ── PROFILE ── */
     .profile {
+      padding: 36px 0 30px;
       text-align: center;
-      padding: 40px 0 30px;
     }
-
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 92px; height: 92px;
       border-radius: 50%;
       margin: 0 auto 20px;
       overflow: hidden;
-      border: 3px solid #e8eef4;
-      background: #fff;
+      border: 2px solid var(--line);
+      background: var(--card);
     }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
     .name {
-      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
       font-weight: 500;
       color: var(--blue);
       letter-spacing: -0.5px;
+      line-height: 1.1;
     }
-
     .name-kr {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
+      font-size: 12px;
+      color: var(--faint);
+      margin-top: 5px;
+      letter-spacing: 0.5px;
     }
 
+    /* role badge — repositioned */
     .role-badge {
       display: inline-block;
       margin-top: 14px;
-      background: #fff;
-      border: 1px solid #dfe5ec;
+      background: var(--surface);
+      border: 1px solid var(--line);
       color: var(--accent);
-      font-size: 11px;
-      letter-spacing: 1px;
-      padding: 8px 16px;
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      padding: 7px 16px;
       border-radius: 999px;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .tagline {
-      margin-top: 18px;
-      font-size: 15px;
+      margin-top: 16px;
+      font-size: 14.5px;
       color: var(--text);
-      line-height: 1.7;
-      letter-spacing: -0.1px;
+      line-height: 1.75;
+      font-weight: 400;
     }
-
     .tagline-kr {
       font-size: 12px;
       color: var(--muted);
@@ -110,216 +105,193 @@
       line-height: 1.6;
     }
 
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 24px 0;
+    /* ── POSITIONING STATEMENT ── */
+    .statement {
+      background: var(--blue);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin: 4px 0 28px;
+    }
+    .statement p {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,.92);
+      line-height: 1.45;
+      letter-spacing: -0.2px;
+    }
+    .statement span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      color: rgba(255,255,255,.38);
+      margin-top: 14px;
+      line-height: 1.6;
+      font-style: normal;
     }
 
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--line); margin: 24px 0; }
+
+    /* ── LABEL ── */
     .label {
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px;
+      color: var(--hi);
+      margin-bottom: 16px;
+      font-weight: 700;
     }
 
-    .skills {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .skill {
+    /* ── SOLVE CARDS ── */
+    .solve-list { display: flex; flex-direction: column; gap: 10px; }
+    .solve-card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 16px 18px;
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.55;
+      border-left: 3px solid var(--hi);
     }
-
-    .skill strong {
+    .solve-card strong {
       display: block;
-      font-weight: 500;
+      font-size: 13.5px;
+      font-weight: 600;
       color: var(--blue);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      line-height: 1.35;
     }
-
-    .skill span {
+    .solve-card span {
       display: block;
-      font-size: 11.5px;
-      color: var(--muted);
-      margin-top: 3px;
-      line-height: 1.6;
-    }
-
-    .works {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .work {
-      padding: 16px 0;
-      border-bottom: 1px solid #f0f1f3;
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 16px;
-    }
-
-    .work:first-child {
-      border-top: 1px solid #f0f1f3;
-    }
-
-    .work-co {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--blue);
-      min-width: 108px;
-      padding-top: 2px;
-    }
-
-    .work-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-      text-align: right;
-    }
-
-    .field-section {
-      margin: 30px 0;
-    }
-
-    .field-img {
-      width: 100%;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid var(--line);
-    }
-
-    .field-img img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      max-height: 260px;
-    }
-
-    .field-caption {
-      margin-top: 12px;
       font-size: 12px;
       color: var(--muted);
       line-height: 1.65;
     }
 
-    .field-caption strong {
+    /* ── PROGRAMS / WORK ── */
+    .works { display: flex; flex-direction: column; }
+    .work {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+    }
+    .work:first-child { border-top: 1px solid var(--line); }
+    .work-co {
+      font-size: 13px;
+      font-weight: 600;
       color: var(--blue);
-      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .work-sub {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .work-tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--faint);
+      text-align: right;
+      white-space: nowrap;
+      padding-top: 2px;
+      letter-spacing: 0.3px;
     }
 
-    .phil {
-      background: var(--blue);
-      border-radius: 16px;
-      padding: 34px 26px;
-      margin: 14px 0;
+    /* ── INDUSTRIES ── */
+    .industries { display: flex; flex-direction: column; gap: 10px; }
+    .ind-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 15px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
     }
-
-    .phil p {
-      font-size: 20px;
-      font-weight: 200;
-      color: #fff;
-      line-height: 1.4;
-      letter-spacing: -0.3px;
+    .ind-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--hi);
+      margin-top: 5px;
+      flex-shrink: 0;
+      opacity: .6;
     }
-
-    .phil span {
-      display: block;
+    .ind-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+    .ind-sub {
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.38);
-      margin-top: 12px;
+      color: var(--muted);
       line-height: 1.6;
     }
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .link-row {
-      background: #fff;
+    /* ── FIELD PHOTO ── */
+    .field-section { margin: 28px 0; }
+    .field-img {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 15px 18px;
+    }
+    .field-img img { width: 100%; display: block; object-fit: cover; max-height: 240px; }
+    .field-caption {
+      margin-top: 10px;
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .field-caption strong { color: var(--blue); font-weight: 600; }
+
+    /* ── LINKS ── */
+    .links { display: flex; flex-direction: column; gap: 8px; }
+    .link-row {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       text-decoration: none;
       color: var(--text);
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      transition: border-color .2s, box-shadow .2s;
     }
-
-    .link-row:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .link-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
+    .link-row:hover { border-color: var(--hi); box-shadow: 0 2px 10px rgba(37,99,235,.07); }
+    .link-left { display: flex; align-items: center; gap: 12px; }
     .link-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: #e8eef4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 600;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
       color: var(--accent);
       flex-shrink: 0;
     }
+    .link-title { font-size: 13.5px; font-weight: 600; color: var(--blue); }
+    .link-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; line-height: 1.45; }
+    .arrow { font-size: 13px; color: var(--faint); flex-shrink: 0; }
 
-    .link-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--blue);
-    }
-
-    .link-sub {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-      line-height: 1.5;
-    }
-
-    .arrow {
-      font-size: 14px;
-      color: var(--muted);
-      margin-left: 12px;
-      flex-shrink: 0;
-    }
-
+    /* ── NOTE ── */
     .note {
-      font-size: 12px;
-      color: #a7adb5;
+      font-size: 11.5px;
+      color: var(--faint);
       text-align: center;
-      margin-top: 30px;
-      line-height: 1.7;
+      margin-top: 28px;
+      line-height: 1.8;
       font-style: italic;
     }
 
     footer {
       text-align: center;
-      margin-top: 44px;
-      font-size: 11px;
-      color: #c6cad0;
+      margin-top: 40px;
+      font-size: 10.5px;
+      color: #cbd5e1;
       letter-spacing: 1px;
     }
   </style>
@@ -328,97 +300,131 @@
 
   <div class="topbar">
     <span>Julia Shin</span>
-    <span>2026</span>
+    <span>Seoul · Global</span>
   </div>
 
+  <!-- PROFILE -->
   <div class="profile">
     <div class="avatar">
       <img src="IMG_0669.jpeg" alt="Julia Shin" />
     </div>
     <div class="name">Julia Shin</div>
     <div class="name-kr">신유진</div>
-    <div class="role-badge">Early-Stage Strategy Designer</div>
-    <p class="tagline">I help early-stage teams clarify positioning<br />and design structure for growth.</p>
-    <p class="tagline-kr">시장 구조를 읽고 확장을 설계합니다.</p>
+    <div class="role-badge">Strategy · Solutions · Global Partnerships</div>
+    <p class="tagline">Working across platforms, payments, AI, and global systems<br />where technology, business, and execution must align.</p>
+    <p class="tagline-kr">기술과 비즈니스 사이의 구조를 설계합니다.</p>
+  </div>
+
+  <!-- POSITIONING STATEMENT -->
+  <div class="statement">
+    <p>From ambiguity<br />to scalable structure.</p>
+    <span>Strategic Program & Solutions Lead · Payments · AI · Global B2B</span>
+  </div>
+
+  <!-- WHAT I SOLVE -->
+  <div class="label">Structural Focus</div>
+  <div class="solve-list">
+    <div class="solve-card">
+      <strong>Cross-Border Market Entry & Localization</strong>
+      <span>Payment infrastructure gaps, partner ecosystem mapping, onboarding architecture across markets.</span>
+    </div>
+    <div class="solve-card">
+      <strong>Business-Technology Translation</strong>
+      <span>Turning technical complexity into strategic clarity for business stakeholders — and vice versa.</span>
+    </div>
+    <div class="solve-card">
+      <strong>Structural Ambiguity in Complex Programs</strong>
+      <span>Rebuilding alignment, communication, and execution structure when projects or partnerships lose direction.</span>
+    </div>
+    <div class="solve-card">
+      <strong>Platform & Partner Operations Design</strong>
+      <span>Multi-party coordination frameworks, process formalization, and operational scalability across fragmented ecosystems.</span>
+    </div>
   </div>
 
   <div class="divider"></div>
 
-  <div class="label">What I Do</div>
-  <div class="skills">
-    <div class="skill">
-      <strong>Positioning Sprint</strong>
-      <span>시장 구조 정리 · 타겟 재정의 · 메시지 설계 · Go-to-Market 방향성</span>
-    </div>
-    <div class="skill">
-      <strong>Pitch & Proposal Structuring</strong>
-      <span>IR 덱 구조 · 제안서 스토리라인 · Problem → Solution 논리 재정렬</span>
-    </div>
-    <div class="skill">
-      <strong>Strategy Workshop</strong>
-      <span>초기 창업팀 · PM · Web3/AI 팀 대상 집중 세션</span>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="label">Selected Work</div>
+  <!-- SELECTED PROGRAMS -->
+  <div class="label">Selected Programs & Systems</div>
   <div class="works">
     <div class="work">
-      <div class="work-co">KakaoPay</div>
-      <div class="work-desc">사업 확장 구조 재정의</div>
+      <div>
+        <div class="work-co">KakaoPay</div>
+        <div class="work-sub">Cross-border payment ops · Alipay+ integration · expansion structure</div>
+      </div>
+      <div class="work-tag">FinTech</div>
     </div>
     <div class="work">
-      <div class="work-co">DeltaX</div>
-      <div class="work-desc">위기 프로젝트 구조 복구</div>
+      <div>
+        <div class="work-co">DeltaX</div>
+        <div class="work-sub">AI project recovery · stakeholder realignment · technical translation</div>
+      </div>
+      <div class="work-tag">AI / CV</div>
     </div>
     <div class="work">
-      <div class="work-co">GE Healthcare</div>
-      <div class="work-desc">의사결정 대시보드 설계</div>
+      <div>
+        <div class="work-co">GE Healthcare</div>
+        <div class="work-sub">Executive dashboard · 12-org coordination · CEO/EVP decision support</div>
+      </div>
+      <div class="work-tag">Enterprise</div>
     </div>
     <div class="work">
-      <div class="work-co">VivaTech</div>
-      <div class="work-desc">글로벌 세일즈 / PoC</div>
+      <div>
+        <div class="work-co">mAy-I · VivaTech</div>
+        <div class="work-sub">Global B2B AI pitching · PoC development · bilingual onboarding</div>
+      </div>
+      <div class="work-tag">Global GTM</div>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <div class="label">Industries</div>
-  <div class="skills">
-    <div class="skill">
-      <strong>AI & Computer Vision</strong>
-      <span>DeltaX · mAy-I — AI 기반 차량 인식, 리테일 행동 데이터 분석</span>
+  <!-- INDUSTRY CONTEXT -->
+  <div class="label">Industry Context</div>
+  <div class="industries">
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">FinTech &amp; Cross-Border Payments</div>
+        <div class="ind-sub">KakaoPay — wallet integrations, PG/VAN coordination, payment ops automation, localization strategy</div>
+      </div>
     </div>
-    <div class="skill">
-      <strong>FinTech & Cross-Border Payments</strong>
-      <span>KakaoPay — 월렛사 연동, 해외결제 구조 재설계, 운영 자동화</span>
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">AI &amp; Computer Vision</div>
+        <div class="ind-sub">DeltaX · mAy-I — retail behavior analytics, vehicle recognition, enterprise AI delivery</div>
+      </div>
     </div>
-    <div class="skill">
-      <strong>Healthcare & Medical Devices</strong>
-      <span>GE Healthcare — 초음파 사업부 12개 조직 통합 대시보드</span>
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">Healthcare &amp; Industrial Systems</div>
+        <div class="ind-sub">GE Healthcare — ultrasound division, 12-organization dashboard, executive reporting</div>
+      </div>
     </div>
-    <div class="skill">
-      <strong>Retail & Global B2B Expansion</strong>
-      <span>VivaTech · 글로벌 리테일 PoC 및 세일즈</span>
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">Global B2B &amp; Retail Tech</div>
+        <div class="ind-sub">VivaTech Paris — Samsung, LG, Hyundai client ecosystem, international buyer conversations</div>
+      </div>
     </div>
   </div>
 
+  <!-- FIELD PHOTO -->
   <div class="field-section">
     <div class="field-img">
       <img src="IMG_0665.jpeg" alt="VivaTech Paris" />
     </div>
     <p class="field-caption">
-      <strong>VivaTech, Paris</strong> — 글로벌 바이어 대상 AI 솔루션 세일즈 및 PoC 설명 현장.
-      Samsung, LG Electronics, Hyundai 주요 클라이언트 보유 기업 대표로 참가.
+      <strong>VivaTech, Paris</strong> — Global buyer engagement for AI retail solutions. Represented portfolio companies to Samsung, LG Electronics, and Hyundai stakeholders. PoC pipeline development in international B2B context.
     </p>
   </div>
 
-  <div class="phil">
-    <p>From ambiguity<br />to scalable structure.</p>
-    <span>모호함을 확장 가능한 구조로.</span>
-  </div>
+  <div class="divider"></div>
 
+  <!-- CONNECT -->
   <div class="label">Connect</div>
   <div class="links">
     <a href="https://www.linkedin.com/in/youjin-s" target="_blank" class="link-row">
@@ -431,14 +437,12 @@
       </div>
       <span class="arrow">↗</span>
     </a>
-
-    <!-- Substack link: replace with your real Substack URL -->
     <a href="https://substack.com/@outsidecorporations?r=54h6wx&utm_medium=ios&utm_source=profile&shareImageVariant=image" target="_blank" class="link-row">
       <div class="link-left">
         <div class="link-icon">SS</div>
         <div>
           <div class="link-title">Substack</div>
-          <div class="link-sub">Essays on market structure, leverage, and economic systems</div>
+          <div class="link-sub">On market structure, leverage, and economic systems</div>
         </div>
       </div>
       <span class="arrow">↗</span>
@@ -447,6 +451,7 @@
 
   <div class="divider"></div>
 
+  <!-- ARCHIVE -->
   <div class="label">Archive</div>
   <div class="links">
     <a href="https://instagram.com/biztech.bridge" target="_blank" class="link-row">
@@ -459,7 +464,6 @@
       </div>
       <span class="arrow">↗</span>
     </a>
-
     <a href="https://instagram.com/material.shift" target="_blank" class="link-row">
       <div class="link-left">
         <div class="link-icon">MS</div>
@@ -473,8 +477,8 @@
   </div>
 
   <p class="note">
-    Selective collaborations and pilot projects.<br />
-    포지셔닝 · 제안서 구조 · 전략 워크샵 협업 문의 환영합니다.
+    Writing, projects, and selective collaborations.<br />
+    전략 프로그램 · 파트너십 · 글로벌 구조 설계 협업 문의 환영합니다.
   </p>
 
   <footer>© 2026 Julia Shin</footer>
