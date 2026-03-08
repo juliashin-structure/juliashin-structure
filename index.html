@@ -33,7 +33,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── TOPBAR ── */
     .topbar {
       display: flex;
       justify-content: space-between;
@@ -46,7 +45,6 @@
       font-weight: 600;
     }
 
-    /* ── PROFILE ── */
     .profile {
       padding: 36px 0 30px;
       text-align: center;
@@ -75,8 +73,6 @@
       margin-top: 5px;
       letter-spacing: 0.5px;
     }
-
-    /* role badge — repositioned */
     .role-badge {
       display: inline-block;
       margin-top: 14px;
@@ -90,7 +86,6 @@
       text-transform: uppercase;
       font-weight: 700;
     }
-
     .tagline {
       margin-top: 16px;
       font-size: 14.5px;
@@ -105,7 +100,6 @@
       line-height: 1.6;
     }
 
-    /* ── POSITIONING STATEMENT ── */
     .statement {
       background: var(--blue);
       border-radius: 14px;
@@ -131,10 +125,8 @@
       font-style: normal;
     }
 
-    /* ── DIVIDER ── */
     .divider { height: 1px; background: var(--line); margin: 24px 0; }
 
-    /* ── LABEL ── */
     .label {
       font-size: 10px;
       letter-spacing: 3px;
@@ -144,7 +136,6 @@
       font-weight: 700;
     }
 
-    /* ── SOLVE CARDS ── */
     .solve-list { display: flex; flex-direction: column; gap: 10px; }
     .solve-card {
       background: var(--card);
@@ -168,7 +159,6 @@
       line-height: 1.65;
     }
 
-    /* ── PROGRAMS / WORK ── */
     .works { display: flex; flex-direction: column; }
     .work {
       padding: 15px 0;
@@ -179,28 +169,15 @@
       align-items: start;
     }
     .work:first-child { border-top: 1px solid var(--line); }
-    .work-co {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--blue);
-      margin-bottom: 3px;
-    }
-    .work-sub {
-      font-size: 11.5px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
+    .work-co { font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 3px; }
+    .work-sub { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
     .work-tag {
-      font-size: 10.5px;
-      font-weight: 600;
+      font-size: 10.5px; font-weight: 600;
       color: var(--faint);
-      text-align: right;
-      white-space: nowrap;
-      padding-top: 2px;
-      letter-spacing: 0.3px;
+      text-align: right; white-space: nowrap;
+      padding-top: 2px; letter-spacing: 0.3px;
     }
 
-    /* ── INDUSTRIES ── */
     .industries { display: flex; flex-direction: column; gap: 10px; }
     .ind-card {
       background: var(--card);
@@ -219,19 +196,9 @@
       flex-shrink: 0;
       opacity: .6;
     }
-    .ind-title {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--blue);
-      margin-bottom: 4px;
-    }
-    .ind-sub {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    .ind-title { font-size: 13.5px; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
+    .ind-sub { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
-    /* ── FIELD PHOTO ── */
     .field-section { margin: 28px 0; }
     .field-img {
       width: 100%;
@@ -240,15 +207,9 @@
       border: 1px solid var(--line);
     }
     .field-img img { width: 100%; display: block; object-fit: cover; max-height: 240px; }
-    .field-caption {
-      margin-top: 10px;
-      font-size: 11.5px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
+    .field-caption { margin-top: 10px; font-size: 11.5px; color: var(--muted); line-height: 1.65; }
     .field-caption strong { color: var(--blue); font-weight: 600; }
 
-    /* ── LINKS ── */
     .links { display: flex; flex-direction: column; gap: 8px; }
     .link-row {
       background: var(--card);
@@ -277,7 +238,6 @@
     .link-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; line-height: 1.45; }
     .arrow { font-size: 13px; color: var(--faint); flex-shrink: 0; }
 
-    /* ── NOTE ── */
     .note {
       font-size: 11.5px;
       color: var(--faint);
@@ -303,42 +263,46 @@
     <span>Seoul · Global</span>
   </div>
 
-  <!-- PROFILE -->
+  <!-- IDENTITY -->
   <div class="profile">
     <div class="avatar">
       <img src="IMG_0669.jpeg" alt="Julia Shin" />
     </div>
     <div class="name">Julia Shin</div>
     <div class="name-kr">신유진</div>
+    <!-- EDIT: identity descriptor -->
     <div class="role-badge">Strategy · Solutions · Global Partnerships</div>
-    <p class="tagline">Working across platforms, payments, AI, and global systems<br />where technology, business, and execution must align.</p>
+    <!-- EDIT: hero tagline — applied option A -->
+    <p class="tagline">Working across payments, platforms, and AI systems<br />where technology, business, and execution intersect.</p>
     <p class="tagline-kr">기술과 비즈니스 사이의 구조를 설계합니다.</p>
   </div>
 
-  <!-- POSITIONING STATEMENT -->
+  <!-- PHILOSOPHY -->
   <div class="statement">
     <p>From ambiguity<br />to scalable structure.</p>
-    <span>Strategic Program & Solutions Lead · Payments · AI · Global B2B</span>
+    <!-- EDIT: descriptor line -->
+    <span>Payments · AI · Industrial Systems · Global B2B</span>
   </div>
 
-  <!-- WHAT I SOLVE -->
-  <div class="label">Structural Focus</div>
+  <!-- FOCUS AREAS -->
+  <!-- EDIT: label changed from "Structural Focus" to "Focus Areas" -->
+  <div class="label">Focus Areas</div>
   <div class="solve-list">
     <div class="solve-card">
-      <strong>Cross-Border Market Entry & Localization</strong>
-      <span>Payment infrastructure gaps, partner ecosystem mapping, onboarding architecture across markets.</span>
+      <strong>Cross-Border Systems & Localization</strong>
+      <span>Payment infrastructure, partner ecosystem mapping, and onboarding architecture across markets and regulatory contexts.</span>
     </div>
     <div class="solve-card">
       <strong>Business-Technology Translation</strong>
-      <span>Turning technical complexity into strategic clarity for business stakeholders — and vice versa.</span>
+      <span>Translating technical complexity into strategic clarity — and business direction into executable structure.</span>
     </div>
     <div class="solve-card">
-      <strong>Structural Ambiguity in Complex Programs</strong>
-      <span>Rebuilding alignment, communication, and execution structure when projects or partnerships lose direction.</span>
+      <strong>Complex Program & Platform Alignment</strong>
+      <span>Rebuilding coordination, communication, and execution structure across multi-party programs and platform ecosystems.</span>
     </div>
     <div class="solve-card">
-      <strong>Platform & Partner Operations Design</strong>
-      <span>Multi-party coordination frameworks, process formalization, and operational scalability across fragmented ecosystems.</span>
+      <strong>Global Partnership & Operations Design</strong>
+      <span>Structuring cross-border partnerships, multi-stakeholder coordination, and scalable operational frameworks.</span>
     </div>
   </div>
 
@@ -350,28 +314,28 @@
     <div class="work">
       <div>
         <div class="work-co">KakaoPay</div>
-        <div class="work-sub">Cross-border payment ops · Alipay+ integration · expansion structure</div>
+        <div class="work-sub">Cross-border payment infrastructure · Alipay+ ecosystem · platform expansion</div>
       </div>
       <div class="work-tag">FinTech</div>
     </div>
     <div class="work">
       <div>
         <div class="work-co">DeltaX</div>
-        <div class="work-sub">AI project recovery · stakeholder realignment · technical translation</div>
+        <div class="work-sub">AI program recovery · stakeholder realignment · technical-business translation</div>
       </div>
       <div class="work-tag">AI / CV</div>
     </div>
     <div class="work">
       <div>
         <div class="work-co">GE Healthcare</div>
-        <div class="work-sub">Executive dashboard · 12-org coordination · CEO/EVP decision support</div>
+        <div class="work-sub">12-organization coordination · executive intelligence system · CEO/EVP support</div>
       </div>
       <div class="work-tag">Enterprise</div>
     </div>
     <div class="work">
       <div>
         <div class="work-co">mAy-I · VivaTech</div>
-        <div class="work-sub">Global B2B AI pitching · PoC development · bilingual onboarding</div>
+        <div class="work-sub">Global B2B engagement · AI solution positioning · international PoC development</div>
       </div>
       <div class="work-tag">Global GTM</div>
     </div>
@@ -386,28 +350,28 @@
       <div class="ind-dot"></div>
       <div>
         <div class="ind-title">FinTech &amp; Cross-Border Payments</div>
-        <div class="ind-sub">KakaoPay — wallet integrations, PG/VAN coordination, payment ops automation, localization strategy</div>
+        <div class="ind-sub">KakaoPay — wallet integrations, PG/VAN coordination, payment ops automation, localization architecture</div>
       </div>
     </div>
     <div class="ind-card">
       <div class="ind-dot"></div>
       <div>
         <div class="ind-title">AI &amp; Computer Vision</div>
-        <div class="ind-sub">DeltaX · mAy-I — retail behavior analytics, vehicle recognition, enterprise AI delivery</div>
+        <div class="ind-sub">DeltaX · mAy-I — retail behavior analytics, vehicle recognition systems, enterprise AI delivery</div>
       </div>
     </div>
     <div class="ind-card">
       <div class="ind-dot"></div>
       <div>
         <div class="ind-title">Healthcare &amp; Industrial Systems</div>
-        <div class="ind-sub">GE Healthcare — ultrasound division, 12-organization dashboard, executive reporting</div>
+        <div class="ind-sub">GE Healthcare — ultrasound division, 12-organization intelligence dashboard, executive reporting</div>
       </div>
     </div>
     <div class="ind-card">
       <div class="ind-dot"></div>
       <div>
         <div class="ind-title">Global B2B &amp; Retail Tech</div>
-        <div class="ind-sub">VivaTech Paris — Samsung, LG, Hyundai client ecosystem, international buyer conversations</div>
+        <div class="ind-sub">VivaTech Paris — Samsung, LG, Hyundai ecosystem engagement, international buyer development</div>
       </div>
     </div>
   </div>
@@ -418,7 +382,7 @@
       <img src="IMG_0665.jpeg" alt="VivaTech Paris" />
     </div>
     <p class="field-caption">
-      <strong>VivaTech, Paris</strong> — Global buyer engagement for AI retail solutions. Represented portfolio companies to Samsung, LG Electronics, and Hyundai stakeholders. PoC pipeline development in international B2B context.
+      <strong>VivaTech, Paris</strong> — Selected to represent the company in buyer-facing conversations around AI retail solutions, contributing to PoC pipeline development in an international B2B context.
     </p>
   </div>
 
@@ -476,12 +440,13 @@
     </a>
   </div>
 
+  <!-- EDIT: closing note — profile tone, not sales -->
   <p class="note">
-    Writing, projects, and selective collaborations.<br />
-    전략 프로그램 · 파트너십 · 글로벌 구조 설계 협업 문의 환영합니다.
+    Writing, projects, and selective conversations<br />across platforms, payments, and global systems.
   </p>
 
-  <footer>© 2026 Julia Shin</footer>
+  <!-- EDIT: year removed -->
+  <footer>© Julia Shin</footer>
 
 </body>
 </html>
