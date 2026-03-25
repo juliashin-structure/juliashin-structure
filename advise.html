@@ -117,44 +117,71 @@ section{padding:88px 40px}
 #realvalue{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06)}
 #realvalue .s-label{color:rgba(42,132,240,0.85)}
 #realvalue .s-title{color:var(--white)}
-.rv-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.rv-left{}
+
+.rv-inner{
+  max-width:1000px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,720px);
+  justify-content:start;
+}
+
+.rv-left{max-width:720px}
+
 .rv-lead{
-  font-size:19px;font-weight:400;color:rgba(255,255,255,0.75);
-  line-height:1.65;margin-bottom:32px;max-width:440px;
+  font-size:19px;
+  font-weight:400;
+  color:rgba(255,255,255,0.75);
+  line-height:1.65;
+  margin-bottom:22px;
+  max-width:620px;
 }
+
 .rv-bullets{
-  list-style:none;display:flex;flex-direction:column;gap:12px;
-  margin:28px 0 20px;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin:0 0 12px;
 }
+
 .rv-bullets li{
-  display:flex;align-items:center;gap:12px;
-  font-size:16px;font-weight:600;color:rgba(255,255,255,0.85);
-  line-height:1.4;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:16px;
+  font-weight:600;
+  color:rgba(255,255,255,0.85);
+  line-height:1.45;
 }
+
 .rv-bullets li::before{
-  content:'';flex-shrink:0;
-  width:6px;height:6px;border-radius:50%;
+  content:'';
+  flex-shrink:0;
+  width:6px;
+  height:6px;
+  border-radius:50%;
   background:var(--blue-l);
+  margin-top:10px;
 }
+
 .rv-close{
-  font-size:15px;font-weight:500;color:rgba(255,255,255,0.45);
-  line-height:1.6;font-style:italic;margin-bottom:16px;
+  font-size:15px;
+  font-weight:500;
+  color:rgba(255,255,255,0.54);
+  line-height:1.6;
+  font-style:italic;
+  margin:0 0 10px;
 }
-.rv-right{display:flex;flex-direction:column;gap:16px;padding-top:8px}
-.rv-item{
-  display:flex;align-items:flex-start;gap:16px;
-  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
-  border-radius:6px;padding:20px 22px;
-  transition:background .2s,border-color .2s;
+
+.rv-context{
+  font-size:14px;
+  color:rgba(255,255,255,0.5);
+  line-height:1.7;
+  max-width:620px;
+  font-style:italic;
+  margin:0;
 }
-.rv-item:hover{background:rgba(26,111,212,0.1);border-color:rgba(42,132,240,0.3)}
-.rv-num{
-  font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--blue-l);flex-shrink:0;padding-top:3px;min-width:32px;
-}
-.rv-item-text h4{font-size:15px;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:4px;line-height:1.3}
-.rv-item-text p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.55}
 
 /* ── WHAT I DO ── */
 #what{background:var(--grey-1);border-top:1px solid var(--grey-2)}
@@ -303,7 +330,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   nav{padding:0 20px}
   .nav-links li:not(:last-child){display:none}
   section{padding:64px 20px}
-  #hero{padding:90px 20px 64px}
+  #hero{
+    min-height:auto;
+    padding:90px 20px 48px;
+    align-items:flex-start;
+  }
   #realvalue{padding:64px 20px}
   .cards{grid-template-columns:1fr}
   .who-list{grid-template-columns:1fr}
@@ -312,6 +343,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .cross-visual{grid-template-columns:1fr 1fr}
   footer{padding:20px}
   .rv-lead{font-size:17px}
+  .rv-context{font-size:13px}
 }
 </style>
 </head>
@@ -328,15 +360,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </ul>
 </nav>
 
-
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-tag">Platform &amp; Ecosystem Architecture &nbsp;·&nbsp; Seoul</div>
     <h1 class="hero-name">Julia Shin</h1>
-    <!-- EDIT: hero-sub -->
     <p class="hero-sub">Cross-Border Platform &amp; Ecosystem Strategy</p>
-    <!-- EDIT: hero-desc — grounded in structural problem-solving -->
     <p class="hero-desc">I enter complex cross-border systems, identify what is structurally broken, and build the platform, partner, and operational architecture that makes market execution actually work.</p>
     <p class="hero-meta">
       <span>Seoul</span>
@@ -359,7 +388,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </p>
 </div>
 
-
 <!-- REAL VALUE SECTION -->
 <section id="realvalue">
   <div class="rv-inner">
@@ -367,22 +395,22 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
       <p class="s-label">Real Value</p>
       <h2 class="s-title" style="color:var(--white)">What I Actually Do</h2>
       <p class="rv-lead">I enter complex systems that are not working and build the structure that lets them run.</p>
+
       <ul class="rv-bullets">
         <li>Identify structural bottlenecks</li>
         <li>Design onboarding &amp; operational flows</li>
-        <li>Reduce repetitive workload for PMs &amp; engineers</li>
+        <li>Reduce repetitive operational workload</li>
         <li>Turn chaos into a working system</li>
       </ul>
+
       <p class="rv-close">After that, the system runs without me.</p>
-    </div>
-    <div class="rv-right" style="justify-content:center;">
-      <p style="font-size:13px;color:rgba(255,255,255,0.28);line-height:1.7;max-width:380px;font-style:italic;">
-        Most relevant for teams where the same questions keep coming up, onboarding requires constant manual coordination, or execution depends too much on specific individuals to keep things running.
+
+      <p class="rv-context">
+        Most relevant for teams where the same questions keep coming up, onboarding requires constant manual coordination, or teams spend significant time manually guiding users.
       </p>
     </div>
   </div>
 </section>
-
 
 <!-- WHAT I DO / FOCUS AREAS -->
 <section id="what">
@@ -428,7 +456,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </div>
 </section>
 
-
 <!-- WHO -->
 <section id="who">
   <div class="s-inner">
@@ -443,7 +470,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     </div>
   </div>
 </section>
-
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -464,7 +490,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </div>
 </section>
 
-
 <!-- CROSS-INDUSTRY -->
 <section id="cross">
   <div class="cross-inner">
@@ -483,7 +508,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     </div>
   </div>
 </section>
-
 
 <!-- HOW I WORK -->
 <section id="how">
@@ -520,13 +544,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </div>
 </section>
 
-
 <!-- CTA BRIDGE -->
 <div style="background:var(--grey-1);border-top:1px solid var(--grey-2);padding:56px 40px;text-align:center;">
   <p style="font-size:15px;color:var(--ink);font-weight:500;margin-bottom:6px;">Not every project is the right fit —</p>
   <p style="font-size:15px;color:var(--grey-4);">but the right ones are usually worth a conversation.</p>
 </div>
-
 
 <!-- CONTACT -->
 <section id="contact">
@@ -543,7 +565,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:20px;max-width:320px;">
           If you are exploring platform expansion, ecosystem partnerships, or market strategy in Korea or Asia, feel free to reach out.
         </p>
-        <!-- EDIT: bilingual note — subtle, English-first -->
         <p class="bilingual-note">Korean inquiries welcome &nbsp;·&nbsp; 한국 기업/팀 문의 가능</p>
         <div class="contact-links" style="margin-top:24px;">
           <a href="mailto:yj.shin1q@gmail.com" class="c-link">
@@ -588,13 +609,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </div>
 </section>
 
-
 <!-- FOOTER -->
 <footer>
   <span class="footer-l">Julia Shin · Cross-Border Strategy</span>
   <span class="footer-r">Seoul, South Korea</span>
 </footer>
-
 
 <script>
   const form = document.getElementById('contactForm');
