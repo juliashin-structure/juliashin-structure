@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Julia Shin · Services & Engagement</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:   #0D1B2A;
+  --navy-2: #162032;
+  --navy-3: #1E2E42;
+  --blue:   #1A6FD4;
+  --blue-l: #2A84F0;
+  --white:  #FFFFFF;
+  --grey-1: #F5F6F8;
+  --grey-2: #E8EAED;
+  --grey-3: #B0B7C3;
+  --grey-4: #6B7280;
+  --ink:    #111827;
+  --f:      'Inter',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--f);
+  color:var(--ink);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(13,27,42,0.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 40px;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{
+  color:var(--white);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center}
+.nav-links a{
+  color:rgba(255,255,255,0.65);
+  font-size:13px;
+  font-weight:500;
+  text-decoration:none;
+  padding:6px 12px;
+  border-radius:4px;
+  transition:color .2s,background .2s;
+}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.07)}
+.nav-links .nav-btn{
+  color:var(--white);
+  background:var(--blue);
+  padding:7px 16px;
+  border-radius:4px;
+}
+.nav-links .nav-btn:hover{background:var(--blue-l)}
+.nav-links .nav-active{color:var(--white)}
+
+/* ── SECTION BASE ── */
+section{padding:88px 40px}
+.s-inner{max-width:1000px;margin:0 auto}
+.s-label{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:12px;
+}
+.s-title{
+  font-size:clamp(28px,4vw,42px);
+  font-weight:800;
+  color:var(--ink);
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  margin-bottom:16px;
+}
+.s-sub{
+  font-size:16px;
+  color:var(--grey-4);
+  line-height:1.7;
+  max-width:600px;
+  margin-bottom:48px;
+}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  padding:12px 26px;
+  border-radius:4px;
+  transition:all .2s;
+}
+.btn-solid{background:var(--blue);color:var(--white)}
+.btn-solid:hover{background:var(--blue-l);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--grey-3)}
+.btn-outline:hover{border-color:var(--ink);background:var(--grey-1)}
+.btn-outline-white{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.3)}
+.btn-outline-white:hover{border-color:var(--white);background:rgba(255,255,255,0.06)}
+
+/* ── HERO ── */
+#hero{
+  background:var(--navy);
+  min-height:72vh;
+  display:flex;align-items:center;
+  padding:120px 40px 80px;
+  position:relative;overflow:hidden;
+}
+#hero::before{
+  content:'';position:absolute;top:-20%;right:-10%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(26,111,212,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+#hero::after{
+  content:'';position:absolute;bottom:-10%;left:-5%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(26,111,212,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{max-width:760px;position:relative;z-index:1}
+.hero-tag{
+  display:inline-block;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--blue-l);
+  border:1px solid rgba(42,132,240,0.35);
+  padding:5px 12px;
+  border-radius:3px;
+  margin-bottom:28px;
+}
+.hero-title{
+  font-size:clamp(38px,6vw,68px);
+  font-weight:800;
+  color:var(--white);
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  margin-bottom:20px;
+}
+.hero-sub{
+  font-size:clamp(17px,2.5vw,22px);
+  font-weight:400;
+  color:rgba(255,255,255,0.7);
+  line-height:1.45;
+  margin-bottom:20px;
+  max-width:580px;
+}
+.hero-hook{
+  font-size:18px;
+  font-weight:600;
+  color:var(--white);
+  line-height:1.5;
+  margin-bottom:24px;
+  max-width:520px;
+}
+.hero-hook span{color:rgba(255,255,255,0.5);font-weight:400}
+.hero-desc{
+  font-size:15px;
+  font-weight:400;
+  color:rgba(255,255,255,0.5);
+  line-height:1.75;
+  margin-bottom:16px;
+  max-width:560px;
+}
+.hero-case{
+  font-size:14px;
+  color:rgba(255,255,255,0.32);
+  line-height:1.7;
+  margin-bottom:36px;
+  max-width:520px;
+  font-style:italic;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ── SERVICE CARDS ── */
+#offerings{background:var(--grey-1);border-top:1px solid var(--grey-2)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc-card{
+  background:var(--white);
+  border:1px solid var(--grey-2);
+  border-radius:6px;
+  padding:32px 28px;
+  display:flex;
+  flex-direction:column;
+  transition:box-shadow .2s,transform .2s;
+  position:relative;
+  overflow:hidden;
+}
+.svc-card:hover{box-shadow:0 8px 30px rgba(0,0,0,0.09);transform:translateY(-3px)}
+.svc-card.featured{border-color:var(--blue);border-width:1.5px}
+.svc-card.featured::before{
+  content:'Core Offer';
+  position:absolute;top:0;right:0;
+  font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--white);background:var(--blue);
+  padding:4px 12px;border-radius:0 6px 0 4px;
+}
+.svc-tier{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:12px;
+}
+.svc-card h3{
+  font-size:17px;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.25;
+  letter-spacing:-0.01em;
+}
+.svc-card .svc-desc{
+  font-size:14px;
+  color:var(--grey-4);
+  line-height:1.7;
+  margin-bottom:16px;
+}
+.svc-includes{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:auto;
+  padding-bottom:24px;
+}
+.svc-includes li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13px;
+  color:var(--ink);
+  line-height:1.5;
+}
+.svc-includes li::before{
+  content:'';
+  flex-shrink:0;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--blue);
+  margin-top:8px;
+}
+.svc-price-row{
+  border-top:1px solid var(--grey-2);
+  padding-top:18px;
+  margin-top:8px;
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.svc-price{
+  font-size:18px;
+  font-weight:800;
+  color:var(--ink);
+  letter-spacing:-0.01em;
+}
+.svc-price-note{
+  font-size:12px;
+  color:var(--grey-4);
+}
+
+/* ── WHO THIS IS FOR ── */
+#for{background:var(--white)}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px}
+.for-item{
+  display:flex;align-items:flex-start;gap:14px;
+  border:1px solid var(--grey-2);border-radius:6px;
+  padding:18px 20px;background:var(--grey-1);
+  transition:border-color .2s,background .2s;
+}
+.for-item:hover{border-color:var(--blue);background:var(--white)}
+.for-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:7px}
+.for-item span{font-size:14px;font-weight:500;color:var(--ink);line-height:1.5}
+
+/* ── ENGAGEMENT / PRICING ── */
+#engagement{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06)}
+#engagement .s-label{color:rgba(42,132,240,0.85)}
+#engagement .s-title{color:var(--white)}
+.eng-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:6px;
+  overflow:hidden;
+  margin-bottom:40px;
+}
+.eng-cell{background:rgba(255,255,255,0.03);padding:32px 28px}
+.eng-cell-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+  margin-bottom:10px;
+}
+.eng-cell-value{
+  font-size:28px;
+  font-weight:800;
+  color:var(--white);
+  letter-spacing:-0.02em;
+  margin-bottom:8px;
+}
+.eng-cell-note{
+  font-size:13px;
+  color:rgba(255,255,255,0.4);
+  line-height:1.6;
+}
+.eng-pilot{
+  font-size:14px;
+  font-weight:600;
+  color:rgba(42,132,240,0.9);
+  letter-spacing:0.04em;
+  border:1px solid rgba(42,132,240,0.25);
+  background:rgba(26,111,212,0.08);
+  border-radius:4px;
+  padding:10px 16px;
+  display:inline-block;
+  margin-bottom:32px;
+}
+
+/* ── SCOPE CLARITY ── */
+#scope{background:var(--grey-1);border-top:1px solid var(--grey-2);border-bottom:1px solid var(--grey-2)}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.scope-col{
+  background:var(--white);
+  border:1px solid var(--grey-2);
+  border-radius:6px;
+  padding:28px 28px;
+}
+.scope-col.paid{border-color:var(--blue)}
+.scope-col-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.scope-col.light .scope-col-label{color:var(--grey-4)}
+.scope-col.paid .scope-col-label{color:var(--blue)}
+.scope-col h4{
+  font-size:16px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:14px;
+  line-height:1.3;
+}
+.scope-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.scope-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:var(--grey-4);line-height:1.5;
+}
+.scope-list li::before{
+  content:'';
+  flex-shrink:0;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--grey-3);
+  margin-top:8px;
+}
+.scope-col.paid .scope-list li{color:var(--ink);font-weight:500}
+.scope-col.paid .scope-list li::before{background:var(--blue)}
+.scope-bridge{
+  font-size:15px;
+  color:var(--grey-4);
+  line-height:1.75;
+  max-width:680px;
+  margin-top:28px;
+  font-style:italic;
+}
+
+/* ── CTA / CONTACT ── */
+#contact{background:var(--navy-2)}
+#contact .s-label{color:rgba(42,132,240,0.9)}
+#contact .s-title{color:var(--white)}
+.cta-sub{
+  font-size:17px;
+  font-weight:400;
+  color:rgba(255,255,255,0.6);
+  line-height:1.7;
+  max-width:540px;
+  margin-bottom:36px;
+}
+.cta-btns{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.cta-back{
+  font-size:13px;
+  color:rgba(255,255,255,0.4);
+  text-decoration:none;
+  letter-spacing:0.04em;
+  transition:color .2s;
+}
+.cta-back:hover{color:rgba(255,255,255,0.75)}
+.bilingual-note{
+  font-size:12px;
+  color:rgba(255,255,255,0.28);
+  letter-spacing:0.04em;
+  margin-top:32px;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:24px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.footer-l{
+  font-size:14px;
+  font-weight:700;
+  color:rgba(255,255,255,0.6);
+}
+.footer-r{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.footer-r a{
+  font-size:12px;
+  color:rgba(255,255,255,0.38);
+  text-decoration:none;
+  transition:color .2s;
+}
+.footer-r a:hover{color:rgba(255,255,255,0.75)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .svc-grid{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
+  .eng-grid{grid-template-columns:1fr}
+  .for-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  nav{padding:0 20px}
+  .nav-links li:not(:last-child){display:none}
+  section{padding:64px 20px}
+  #hero{padding:100px 20px 60px;min-height:auto}
+  footer{padding:20px}
+  .cta-btns{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="advise.html" class="nav-brand">JULIA SHIN</a>
+  <ul class="nav-links">
+    <li><a href="advise.html">Home</a></li>
+    <li><a href="#offerings" class="nav-active">Services</a></li>
+    <li><a href="#engagement">Engagement</a></li>
+    <li><a href="#contact" class="nav-btn">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Services &amp; Engagement &nbsp;·&nbsp; Julia Shin</div>
+    <h1 class="hero-title">From structural diagnosis<br/>to full operating system design.</h1>
+    <p class="hero-hook">
+      Not ideas.<br/>
+      <span>Execution-ready structures.</span>
+    </p>
+    <p class="hero-desc">
+      I work with a small number of teams where structural clarity and execution actually matter.
+      Engagements focus on diagnosing bottlenecks, defining expansion paths, and designing
+      operating structures that run without constant manual coordination.
+    </p>
+    <p class="hero-desc">
+      I am often brought in when a team needs fast structural clarity — not just more ideas.
+      Within a short session, I identify bottlenecks, expansion paths, and the operating logic
+      needed to move forward.
+    </p>
+    <p class="hero-case">
+      In a single working session, I translated a service explanation into an expansion concept,
+      onboarding flow, and operating structure.
+    </p>
+    <div class="hero-btns">
+      <a href="#offerings" class="btn btn-solid">View Services</a>
+      <a href="#contact" class="btn btn-outline-white">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="offerings">
+  <div class="s-inner">
+    <p class="s-label">Services</p>
+    <h2 class="s-title">Engagement Options</h2>
+    <p class="s-sub">Three structured entry points. Each one focused on a different level of structural clarity and system design.</p>
+
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <p class="svc-tier">Entry</p>
+        <h3>Rapid Strategic Diagnosis</h3>
+        <p class="svc-desc">A focused working session to identify structural bottlenecks, expansion opportunities, and operational gaps — fast.</p>
+        <ul class="svc-includes">
+          <li>60–90 minute working session</li>
+          <li>Structural bottleneck identification</li>
+          <li>Key insights + prioritized next steps</li>
+        </ul>
+        <div class="svc-price-row">
+          <span class="svc-price">₩290,000</span>
+          <span class="svc-price-note">starting from</span>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <p class="svc-tier">Strategic</p>
+        <h3>Expansion Concept Sprint</h3>
+        <p class="svc-desc">Define where your product can grow and design the structure required to support that growth.</p>
+        <ul class="svc-includes">
+          <li>Expansion strategy &amp; concept design</li>
+          <li>Target segment / channel / partner structure</li>
+          <li>Priority roadmap with structural logic</li>
+        </ul>
+        <div class="svc-price-row">
+          <span class="svc-price">₩990,000</span>
+          <span class="svc-price-note">starting from</span>
+        </div>
+      </div>
+
+      <div class="svc-card featured">
+        <p class="svc-tier">Core Engagement</p>
+        <h3>Onboarding &amp; Operations Structure Sprint</h3>
+        <p class="svc-desc">Designing full operating systems — not just ideas. From partner tiering and onboarding flows to performance tracking, dashboards, and automation structure.</p>
+        <ul class="svc-includes">
+          <li>Who you work with — tiering logic &amp; criteria</li>
+          <li>How onboarding happens — flows &amp; documentation</li>
+          <li>How operations run without constant manual work</li>
+          <li>How performance is tracked and improved</li>
+          <li>Dashboard &amp; automation structure</li>
+        </ul>
+        <div class="svc-price-row">
+          <span class="svc-price">₩2,500,000</span>
+          <span class="svc-price-note">starting from</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section id="for">
+  <div class="s-inner">
+    <p class="s-label">Fit</p>
+    <h2 class="s-title">Who This Is For</h2>
+    <p class="s-sub">This is for you if:</p>
+    <div class="for-grid">
+      <div class="for-item"><span class="for-dot"></span><span>Your product exists but doesn’t scale</span></div>
+      <div class="for-item"><span class="for-dot"></span><span>Operations feel heavy and repetitive</span></div>
+      <div class="for-item"><span class="for-dot"></span><span>You keep answering the same questions</span></div>
+      <div class="for-item"><span class="for-dot"></span><span>Onboarding requires too much manual coordination</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT / PRICING FRAME -->
+<section id="engagement">
+  <div class="s-inner">
+    <p class="s-label">Engagement</p>
+    <h2 class="s-title">How Engagements Work</h2>
+    <p class="s-sub" style="color:rgba(255,255,255,0.5)">Structured around outcomes, not hours. Designed to produce something that runs after the engagement ends.</p>
+
+    <div class="eng-grid">
+      <div class="eng-cell">
+        <p class="eng-cell-label">Typical Duration</p>
+        <p class="eng-cell-value">4–6 weeks</p>
+        <p class="eng-cell-note">From initial diagnosis through structural handoff. Shorter for diagnostic sessions, longer for full system design.</p>
+      </div>
+      <div class="eng-cell">
+        <p class="eng-cell-label">Investment Range</p>
+        <p class="eng-cell-value">₩3M – ₩15M+</p>
+        <p class="eng-cell-note">Varies by scope and depth. Quoted per engagement, not per hour.</p>
+      </div>
+    </div>
+
+    <p class="eng-pilot">Currently taking on 2–3 pilot engagements.</p>
+
+    <p style="font-size:14px;color:rgba(255,255,255,0.38);line-height:1.75;max-width:560px;">
+      Engagements are scoped in advance. I do not quote hourly rates and do not take on work without a clear structural problem to solve.
+    </p>
+  </div>
+</section>
+
+<!-- SCOPE CLARITY -->
+<section id="scope">
+  <div class="s-inner">
+    <p class="s-label">Scope</p>
+    <h2 class="s-title">What Is and Isn't Included</h2>
+    <p class="s-sub">A useful reference for what a first conversation covers versus what a paid engagement produces.</p>
+
+    <div class="scope-grid">
+
+      <div class="scope-col light">
+        <p class="scope-col-label">Informal / Introductory</p>
+        <h4>What a first conversation covers</h4>
+        <ul class="scope-list">
+          <li>Problem definition &amp; framing</li>
+          <li>Directional observation</li>
+          <li>1–2 structural insights</li>
+        </ul>
+      </div>
+
+      <div class="scope-col paid">
+        <p class="scope-col-label">Paid Engagement</p>
+        <h4>What a full engagement produces</h4>
+        <ul class="scope-list">
+          <li>KPI &amp; performance measurement design</li>
+          <li>Tiering structure &amp; qualification logic</li>
+          <li>Onboarding process &amp; documentation</li>
+          <li>Operating flow &amp; coordination architecture</li>
+          <li>Automation structure &amp; tooling logic</li>
+          <li>Data &amp; reporting framework</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="scope-bridge">
+      What begins as a quick diagnosis often expands into full operating system design —
+      including onboarding logic, workflows, performance structure, and reporting architecture.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section id="contact">
+  <div class="s-inner">
+    <p class="s-label">Get in Touch</p>
+    <h2 class="s-title" style="color:var(--white)">Start a Conversation</h2>
+    <p class="cta-sub">
+      I work with a limited number of teams.<br/>
+      If this resonates, reach out with a short description of your situation.
+    </p>
+    <div class="cta-btns">
+      <a href="mailto:yj.shin1q@gmail.com" class="btn btn-solid">Email Julia Shin</a>
+      <a href="advise.html" class="btn btn-outline-white">Back to Home</a>
+    </div>
+    <p class="bilingual-note">Korean inquiries welcome &nbsp;·&nbsp; 한국 기업/팀 문의 가능</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-l">Julia Shin · Services &amp; Engagement</span>
+  <div class="footer-r">
+    <a href="advise.html">Back to Home</a>
+    <a href="#offerings">Services</a>
+    <a href="#engagement">Engagement</a>
+    <a href="mailto:yj.shin1q@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
