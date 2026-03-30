@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Julia Shin · Services & Engagement</title>
+<title>Julia Shin · Services</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -23,9 +23,13 @@
   --f:'Inter',system-ui,sans-serif;
 }
 
-body{font-family:var(--f);color:var(--ink);background:var(--white);}
+body{
+  font-family:var(--f);
+  color:var(--ink);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
 
-/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   background:rgba(13,27,42,0.97);
@@ -33,39 +37,114 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
 }
 .nav-brand{color:#fff;font-weight:700;text-decoration:none;}
-.nav-links{display:flex;gap:12px;list-style:none;}
-.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;}
+.nav-links{display:flex;gap:12px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px}
 .nav-links a:hover{color:#fff}
-.nav-btn{background:var(--blue);color:#fff;padding:6px 14px;border-radius:4px}
+.nav-btn{background:var(--blue);color:#fff !important;padding:6px 14px;border-radius:4px}
 
-/* HERO */
 #hero{
   background:var(--navy);
   padding:120px 40px 80px;
   color:#fff;
 }
-.hero-title{font-size:48px;font-weight:800;margin-bottom:20px}
-.hero-desc{color:rgba(255,255,255,0.6);line-height:1.7;max-width:600px;margin-bottom:20px}
+.hero-title{
+  font-size:clamp(36px,5vw,56px);
+  font-weight:800;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+.hero-desc{
+  color:rgba(255,255,255,0.62);
+  line-height:1.75;
+  max-width:640px;
+  margin-bottom:20px;
+  font-size:17px;
+}
 
-/* SECTION */
 section{padding:80px 40px}
 .s-inner{max-width:1000px;margin:0 auto}
-.s-title{font-size:32px;font-weight:800;margin-bottom:20px}
-.s-sub{color:var(--grey-4);margin-bottom:40px}
+.s-label{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:10px;
+}
+.s-title{
+  font-size:32px;
+  font-weight:800;
+  margin-bottom:18px;
+  line-height:1.15;
+}
+.s-sub{
+  color:var(--grey-4);
+  margin-bottom:40px;
+  line-height:1.75;
+  max-width:720px;
+}
 
-/* CARDS */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 .card{
   border:1px solid var(--grey-2);
   padding:24px;
   border-radius:6px;
   background:#fff;
 }
-.card h3{margin-bottom:10px}
-.card p{color:var(--grey-4);font-size:14px}
-.price{margin-top:16px;font-weight:700}
+.card h3{
+  margin-bottom:10px;
+  font-size:22px;
+  line-height:1.25;
+}
+.card p{
+  color:var(--grey-4);
+  font-size:14px;
+  line-height:1.75;
+  margin-bottom:8px;
+}
+.price{
+  margin-top:16px;
+  font-weight:700;
+  font-size:17px;
+  color:var(--ink) !important;
+}
 
-/* CTA */
+.scope-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.scope-box{
+  border:1px solid var(--grey-2);
+  border-radius:6px;
+  padding:24px;
+  background:var(--grey-1);
+}
+.scope-box h4{
+  font-size:18px;
+  margin-bottom:12px;
+}
+.scope-box p{
+  font-size:14px;
+  color:var(--grey-4);
+  line-height:1.75;
+}
+
+.list{
+  margin-top:12px;
+  padding-left:18px;
+}
+.list li{
+  margin-bottom:8px;
+  color:var(--grey-4);
+  line-height:1.7;
+  font-size:14px;
+}
+
 .btn{
   display:inline-block;
   background:var(--blue);
@@ -76,82 +155,135 @@ section{padding:80px 40px}
   font-weight:600;
 }
 
-/* RESPONSIVE */
+.note{
+  font-size:14px;
+  color:var(--grey-4);
+  line-height:1.75;
+  max-width:700px;
+}
+
 @media(max-width:900px){
   .cards{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="advise.html" class="nav-brand">JULIA SHIN</a>
   <ul class="nav-links">
     <li><a href="advise.html">Home</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing & Scope</a></li>
     <li><a href="#contact" class="nav-btn">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="s-inner">
+    <p class="s-label" style="color:rgba(42,132,240,0.9)">Services</p>
     <h1 class="hero-title">From structural diagnosis to full system design</h1>
     <p class="hero-desc">
       I design systems that make services run — not slides, not ideas.
-      Real structures that remove chaos and scale execution.
+      Real structures that reduce manual coordination, improve onboarding,
+      and make execution easier to sustain.
     </p>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="s-inner">
-    <h2 class="s-title">Services</h2>
-    <p class="s-sub">Three structured entry points depending on depth.</p>
+    <p class="s-label">Services</p>
+    <h2 class="s-title">Three structured entry points</h2>
+    <p class="s-sub">
+      The entry point depends on depth, urgency, and how much of the structure needs to be clarified or redesigned.
+    </p>
 
     <div class="cards">
 
       <div class="card">
         <h3>Rapid Strategic Diagnosis</h3>
-        <p>Identify structural bottlenecks, expansion paths, and key next steps.</p>
-        <p>60–90 min session</p>
-        <p class="price">₩290,000+</p>
+        <p>Identify structural bottlenecks, expansion paths, and the most important next steps.</p>
+        <p>Format: 60–90 minute working session</p>
+        <p>Best for: teams that need clarity before committing to a larger project</p>
+        <p class="price">Starting from ₩290,000</p>
       </div>
 
       <div class="card">
         <h3>Expansion Concept Sprint</h3>
-        <p>Define where your product can grow and what structure is needed.</p>
-        <p>Includes roadmap & expansion strategy</p>
-        <p class="price">₩990,000+</p>
+        <p>Define where your product or service can grow and what structure is required to support that growth.</p>
+        <p>Includes: expansion direction, target/channel/partner logic, and priority roadmap</p>
+        <p>Best for: teams preparing for growth, repositioning, or structured expansion</p>
+        <p class="price">Starting from ₩990,000</p>
       </div>
 
       <div class="card">
         <h3>Onboarding & Operations Structure</h3>
-        <p>Design full operating systems — onboarding, workflows, automation.</p>
-        <p>Make your system run without manual chaos</p>
-        <p class="price">₩2,500,000+</p>
+        <p>Design full operating systems — onboarding, workflows, documentation, reporting logic, and automation structure.</p>
+        <p>Best for: teams with operational friction, repetitive coordination, or scale problems</p>
+        <p>Typical scope: multi-step process design and operating structure redesign</p>
+        <p class="price">Starting from ₩2,500,000</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" style="background:var(--navy-2);color:#fff;">
+<section id="pricing">
   <div class="s-inner">
-    <h2 class="s-title">Start a Conversation</h2>
-    <p class="s-sub" style="color:rgba(255,255,255,0.6);">
-      Currently taking 2–3 pilot projects.
+    <p class="s-label">Pricing & Scope</p>
+    <h2 class="s-title">How projects are scoped</h2>
+    <p class="s-sub">
+      Pricing depends on scope and complexity, not just time.
+      The same service category can vary depending on how many stakeholders are involved,
+      how much documentation is required, and whether the work includes workflow, dashboard,
+      or automation structure.
     </p>
 
-    <!-- ✅ 핵심: 구글폼 연결 -->
+    <div class="scope-grid">
+      <div class="scope-box">
+        <h4>Mid-scope projects</h4>
+        <p>Typical range: ₩1M – ₩3M</p>
+        <ul class="list">
+          <li>Single team or relatively contained workflow</li>
+          <li>Focused sprint with defined output</li>
+          <li>Strategy memo, structure proposal, or light process redesign</li>
+        </ul>
+      </div>
+
+      <div class="scope-box">
+        <h4>High-scope projects</h4>
+        <p>Typical range: ₩3M – ₩15M+</p>
+        <ul class="list">
+          <li>Multiple stakeholders or cross-functional collaboration</li>
+          <li>Broader onboarding / operations redesign</li>
+          <li>Dashboard, reporting, or automation structure included</li>
+          <li>Higher documentation depth and implementation alignment</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:24px;">
+      In practice, projects are priced based on complexity, timeline, number of teams involved,
+      and the depth of deliverables required.
+    </p>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--navy-2);color:#fff;">
+  <div class="s-inner">
+    <p class="s-label" style="color:rgba(42,132,240,0.9)">Contact</p>
+    <h2 class="s-title">Start a Conversation</h2>
+    <p class="s-sub" style="color:rgba(255,255,255,0.6);">
+      Currently taking 2–3 pilot projects.<br/>
+      Korean inquiries welcome. Communication is primarily handled by email.
+    </p>
+
     <a href="https://forms.gle/8yRscJCoRtUdDftw5" target="_blank" class="btn">
       Request Advisory
     </a>
-
   </div>
 </section>
 
