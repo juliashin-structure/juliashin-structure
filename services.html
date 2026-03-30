@@ -18,72 +18,121 @@
   --white:#FFFFFF;
   --grey-1:#F5F6F8;
   --grey-2:#E8EAED;
+  --grey-3:#B0B7C3;
   --grey-4:#6B7280;
   --ink:#111827;
   --f:'Inter',system-ui,sans-serif;
 }
 
+html{scroll-behavior:smooth}
 body{
   font-family:var(--f);
   color:var(--ink);
   background:var(--white);
   -webkit-font-smoothing:antialiased;
+  line-height:1.6;
 }
 
+/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   background:rgba(13,27,42,0.97);
-  padding:0 40px;height:60px;
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:0 32px;height:60px;
   display:flex;align-items:center;justify-content:space-between;
 }
-.nav-brand{color:#fff;font-weight:700;text-decoration:none;}
-.nav-links{display:flex;gap:12px;list-style:none;align-items:center}
-.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px}
+.nav-brand{
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.02em;
+}
+.nav-links{
+  display:flex;
+  gap:18px;
+  list-style:none;
+  align-items:center;
+}
+.nav-links a{
+  color:rgba(255,255,255,0.68);
+  text-decoration:none;
+  font-size:14px;
+}
 .nav-links a:hover{color:#fff}
-.nav-btn{background:var(--blue);color:#fff !important;padding:6px 14px;border-radius:4px}
+.nav-btn{
+  background:var(--blue);
+  color:#fff !important;
+  padding:8px 14px;
+  border-radius:4px;
+}
 
+/* HERO */
 #hero{
   background:var(--navy);
-  padding:120px 40px 80px;
+  padding:120px 32px 76px;
   color:#fff;
+}
+.s-inner{
+  max-width:1040px;
+  margin:0 auto;
+}
+.eyebrow{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(42,132,240,0.95);
+  margin-bottom:14px;
 }
 .hero-title{
   font-size:clamp(36px,5vw,56px);
   font-weight:800;
-  line-height:1.1;
+  line-height:1.08;
   margin-bottom:20px;
+  max-width:900px;
 }
 .hero-desc{
-  color:rgba(255,255,255,0.62);
-  line-height:1.75;
-  max-width:640px;
-  margin-bottom:20px;
+  color:rgba(255,255,255,0.68);
+  line-height:1.8;
+  max-width:700px;
   font-size:17px;
 }
+.hero-subnote{
+  margin-top:20px;
+  color:rgba(255,255,255,0.42);
+  font-size:14px;
+  line-height:1.8;
+}
 
-section{padding:80px 40px}
-.s-inner{max-width:1000px;margin:0 auto}
-.s-label{
+/* SECTION */
+section{
+  padding:76px 32px;
+}
+.section-label{
   font-size:13px;
   font-weight:700;
-  letter-spacing:0.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--blue);
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
-.s-title{
-  font-size:32px;
+.section-title{
+  font-size:clamp(30px,4vw,46px);
   font-weight:800;
+  line-height:1.12;
   margin-bottom:18px;
-  line-height:1.15;
+  color:var(--ink);
 }
-.s-sub{
+.section-sub{
+  font-size:17px;
   color:var(--grey-4);
-  margin-bottom:40px;
-  line-height:1.75;
-  max-width:720px;
+  line-height:1.85;
+  max-width:760px;
+  margin-bottom:38px;
 }
 
+/* CARDS */
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -91,194 +140,332 @@ section{padding:80px 40px}
 }
 .card{
   border:1px solid var(--grey-2);
-  padding:24px;
-  border-radius:6px;
+  padding:28px 26px;
+  border-radius:8px;
   background:#fff;
 }
 .card h3{
-  margin-bottom:10px;
-  font-size:22px;
-  line-height:1.25;
+  font-size:20px;
+  line-height:1.3;
+  margin-bottom:12px;
+  color:var(--ink);
+}
+.card .ko-title{
+  display:block;
+  font-size:13px;
+  color:var(--grey-4);
+  font-weight:600;
+  margin-top:4px;
 }
 .card p{
   color:var(--grey-4);
-  font-size:14px;
-  line-height:1.75;
-  margin-bottom:8px;
+  font-size:15px;
+  line-height:1.85;
+  margin-bottom:10px;
 }
 .price{
-  margin-top:16px;
-  font-weight:700;
-  font-size:17px;
+  margin-top:18px;
+  font-weight:800;
+  font-size:18px;
   color:var(--ink) !important;
 }
+.price-note{
+  font-size:13px !important;
+  color:var(--grey-4) !important;
+  margin-top:6px;
+}
 
-.scope-grid{
+/* TWO COL */
+.two-col{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:22px;
 }
-.scope-box{
+.box{
   border:1px solid var(--grey-2);
-  border-radius:6px;
-  padding:24px;
+  border-radius:8px;
+  padding:26px;
   background:var(--grey-1);
 }
-.scope-box h4{
-  font-size:18px;
+.box h4{
+  font-size:22px;
+  margin-bottom:12px;
+  line-height:1.25;
+}
+.box p{
+  font-size:15px;
+  color:var(--grey-4);
+  line-height:1.85;
   margin-bottom:12px;
 }
-.scope-box p{
-  font-size:14px;
-  color:var(--grey-4);
-  line-height:1.75;
-}
-
-.list{
-  margin-top:12px;
+.box ul{
   padding-left:18px;
 }
-.list li{
-  margin-bottom:8px;
+.box li{
+  margin-bottom:10px;
   color:var(--grey-4);
-  line-height:1.7;
-  font-size:14px;
+  line-height:1.8;
+  font-size:15px;
 }
 
+/* INFO STRIP */
+.info-strip{
+  border-top:1px solid var(--grey-2);
+  margin-top:34px;
+  padding-top:26px;
+}
+.info-strip p{
+  font-size:15px;
+  color:var(--grey-4);
+  line-height:1.9;
+  max-width:860px;
+  margin-bottom:10px;
+}
+
+/* CONTACT */
+#contact{
+  background:var(--navy-2);
+  color:#fff;
+}
+#contact .section-title{color:#fff}
+#contact .section-sub{
+  color:rgba(255,255,255,0.65);
+  max-width:760px;
+}
+.contact-meta{
+  color:rgba(255,255,255,0.46);
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:22px;
+}
 .btn{
   display:inline-block;
   background:var(--blue);
   color:#fff;
-  padding:12px 20px;
+  padding:13px 20px;
   text-decoration:none;
-  border-radius:4px;
-  font-weight:600;
+  border-radius:6px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.btn:hover{background:var(--blue-l)}
+
+/* FOOTER */
+footer{
+  background:var(--navy);
+  color:rgba(255,255,255,0.34);
+  padding:22px 32px;
+  font-size:13px;
+}
+.footer-inner{
+  max-width:1040px;
+  margin:0 auto;
 }
 
-.note{
-  font-size:14px;
-  color:var(--grey-4);
-  line-height:1.75;
-  max-width:700px;
-}
-
+/* RESPONSIVE */
 @media(max-width:900px){
   .cards{grid-template-columns:1fr}
-  .scope-grid{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  nav{padding:0 18px}
+  .nav-links{gap:12px}
+  .nav-links a{font-size:13px}
+  #hero{padding:100px 20px 64px}
+  section{padding:64px 20px}
+  footer{padding:20px}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="advise.html" class="nav-brand">JULIA SHIN</a>
   <ul class="nav-links">
     <li><a href="advise.html">Home</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing & Scope</a></li>
+    <li><a href="#pricing">Pricing &amp; Scope</a></li>
     <li><a href="#contact" class="nav-btn">Contact</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="s-inner">
-    <p class="s-label" style="color:rgba(42,132,240,0.9)">Services</p>
+    <p class="eyebrow">Services</p>
     <h1 class="hero-title">From structural diagnosis to full system design</h1>
     <p class="hero-desc">
       I design systems that make services run — not slides, not ideas.
       Real structures that reduce manual coordination, improve onboarding,
       and make execution easier to sustain.
     </p>
+    <p class="hero-subnote">
+      한국어 문의 가능합니다.<br/>
+      Pricing and communication details are outlined below.
+    </p>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="s-inner">
-    <p class="s-label">Services</p>
-    <h2 class="s-title">Three structured entry points</h2>
-    <p class="s-sub">
-      The entry point depends on depth, urgency, and how much of the structure needs to be clarified or redesigned.
+    <p class="section-label">Services</p>
+    <h2 class="section-title">Three structured entry points</h2>
+    <p class="section-sub">
+      The right entry point depends on how much of the structure needs to be clarified,
+      redesigned, or translated into an actual operating system.<br/><br/>
+      아래 3단계는 단순 아이디어 제안이 아니라,
+      문제 진단 → 확장 방향 설계 → 운영 시스템 설계로 이어지는 구조입니다.
     </p>
 
     <div class="cards">
 
       <div class="card">
-        <h3>Rapid Strategic Diagnosis</h3>
-        <p>Identify structural bottlenecks, expansion paths, and the most important next steps.</p>
-        <p>Format: 60–90 minute working session</p>
-        <p>Best for: teams that need clarity before committing to a larger project</p>
+        <h3>
+          Rapid Strategic Diagnosis
+          <span class="ko-title">서비스 구조 진단</span>
+        </h3>
+        <p>
+          Identify structural bottlenecks, expansion paths, and the most important next steps.
+        </p>
+        <p>
+          현재 서비스/운영 구조에서 어디가 막혀 있는지 빠르게 진단하고,
+          우선순위와 다음 액션을 정리하는 진단형 서비스입니다.
+        </p>
+        <p>
+          Format: 60–90 minute working session
+        </p>
+        <p>
+          Best for: teams that need clarity before committing to a larger project
+        </p>
         <p class="price">Starting from ₩290,000</p>
+        <p class="price-note">진단 세션 / 요약 인사이트 / 다음 단계 제안 포함</p>
       </div>
 
       <div class="card">
-        <h3>Expansion Concept Sprint</h3>
-        <p>Define where your product or service can grow and what structure is required to support that growth.</p>
-        <p>Includes: expansion direction, target/channel/partner logic, and priority roadmap</p>
-        <p>Best for: teams preparing for growth, repositioning, or structured expansion</p>
+        <h3>
+          Expansion Strategy Design
+          <span class="ko-title">확장 방향 및 구조 설계</span>
+        </h3>
+        <p>
+          Define where your product or service can grow and what structure is required to support that growth.
+        </p>
+        <p>
+          서비스가 어디로 확장될 수 있는지, 그리고 그 확장을 실제로 뒷받침하려면
+          어떤 구조가 필요한지를 설계하는 단계입니다.
+        </p>
+        <p>
+          Includes: expansion direction, target/channel/partner logic, and priority roadmap
+        </p>
+        <p>
+          Best for: teams preparing for growth, repositioning, or structured expansion
+        </p>
         <p class="price">Starting from ₩990,000</p>
+        <p class="price-note">방향성 정의 / 구조 메모 / 우선순위 정리 포함</p>
       </div>
 
       <div class="card">
-        <h3>Onboarding & Operations Structure</h3>
-        <p>Design full operating systems — onboarding, workflows, documentation, reporting logic, and automation structure.</p>
-        <p>Best for: teams with operational friction, repetitive coordination, or scale problems</p>
-        <p>Typical scope: multi-step process design and operating structure redesign</p>
+        <h3>
+          Onboarding &amp; Operations System Design
+          <span class="ko-title">온보딩 및 운영 시스템 설계</span>
+        </h3>
+        <p>
+          Design full operating systems — onboarding, workflows, documentation, reporting logic, and automation structure.
+        </p>
+        <p>
+          고객이나 파트너가 처음 들어오는 흐름부터, 반복 업무를 줄이는 운영 플로우,
+          문서화, 리포트 구조, 자동화 구조까지 포함하는 프로젝트형 작업입니다.
+        </p>
+        <p>
+          Best for: teams with operational friction, repetitive coordination, or scale problems
+        </p>
+        <p>
+          Typical scope: multi-step process design and operating structure redesign
+        </p>
         <p class="price">Starting from ₩2,500,000</p>
+        <p class="price-note">범위와 이해관계자 수에 따라 견적이 달라집니다</p>
       </div>
 
     </div>
   </div>
 </section>
 
+<!-- PRICING -->
 <section id="pricing">
   <div class="s-inner">
-    <p class="s-label">Pricing & Scope</p>
-    <h2 class="s-title">How projects are scoped</h2>
-    <p class="s-sub">
+    <p class="section-label">Pricing &amp; Scope</p>
+    <h2 class="section-title">How projects are scoped</h2>
+    <p class="section-sub">
       Pricing depends on scope and complexity, not just time.
       The same service category can vary depending on how many stakeholders are involved,
-      how much documentation is required, and whether the work includes workflow, dashboard,
-      or automation structure.
+      how much documentation is required, and whether the work includes workflow,
+      dashboard, or automation structure.<br/><br/>
+      즉, 같은 카테고리 안에서도
+      참여 팀 수, 설계 범위, 산출물 깊이, 자동화/대시보드 포함 여부에 따라
+      프로젝트 비용은 달라집니다.
     </p>
 
-    <div class="scope-grid">
-      <div class="scope-box">
-        <h4>Mid-scope projects</h4>
+    <div class="two-col">
+      <div class="box">
+        <h4>Mid-scope projects<br/><span style="font-size:14px;color:var(--grey-4);font-weight:600;">중간 범위 프로젝트</span></h4>
         <p>Typical range: ₩1M – ₩3M</p>
-        <ul class="list">
+        <ul>
           <li>Single team or relatively contained workflow</li>
-          <li>Focused sprint with defined output</li>
+          <li>Focused structure design with defined output</li>
           <li>Strategy memo, structure proposal, or light process redesign</li>
+          <li>한 팀 중심의 비교적 제한된 범위</li>
+          <li>구조 제안서, 방향 정리, 프로세스 일부 재설계 수준</li>
         </ul>
       </div>
 
-      <div class="scope-box">
-        <h4>High-scope projects</h4>
+      <div class="box">
+        <h4>High-scope projects<br/><span style="font-size:14px;color:var(--grey-4);font-weight:600;">고범위 프로젝트</span></h4>
         <p>Typical range: ₩3M – ₩15M+</p>
-        <ul class="list">
+        <ul>
           <li>Multiple stakeholders or cross-functional collaboration</li>
           <li>Broader onboarding / operations redesign</li>
           <li>Dashboard, reporting, or automation structure included</li>
           <li>Higher documentation depth and implementation alignment</li>
+          <li>여러 팀이 연결되거나 이해관계자가 많은 경우</li>
+          <li>온보딩/운영 체계 전반을 다시 설계하는 경우</li>
         </ul>
       </div>
     </div>
 
-    <p class="note" style="margin-top:24px;">
-      In practice, projects are priced based on complexity, timeline, number of teams involved,
-      and the depth of deliverables required.
-    </p>
+    <div class="info-strip">
+      <p>
+        In practice, projects are priced based on complexity, timeline, number of teams involved,
+        and the depth of deliverables required.
+      </p>
+      <p>
+        실제 견적은 아래 요소에 따라 결정됩니다:
+      </p>
+      <p>
+        - 참여 팀 및 담당자 수<br/>
+        - 전략/운영/데이터까지 포함되는 범위<br/>
+        - 필요한 산출물의 깊이와 문서화 수준<br/>
+        - 대시보드, 리포트, 자동화 구조 포함 여부<br/>
+        - 프로젝트 타임라인 및 커뮤니케이션 방식
+      </p>
+    </div>
   </div>
 </section>
 
-<section id="contact" style="background:var(--navy-2);color:#fff;">
+<!-- CONTACT -->
+<section id="contact">
   <div class="s-inner">
-    <p class="s-label" style="color:rgba(42,132,240,0.9)">Contact</p>
-    <h2 class="s-title">Start a Conversation</h2>
-    <p class="s-sub" style="color:rgba(255,255,255,0.6);">
+    <p class="section-label" style="color:rgba(42,132,240,0.92)">Contact</p>
+    <h2 class="section-title">Start a Conversation</h2>
+    <p class="section-sub">
       Currently taking 2–3 pilot projects.<br/>
-      Korean inquiries welcome. Communication is primarily handled by email.
+      한국어 문의 가능합니다. 주요 커뮤니케이션은 이메일 기반으로 진행됩니다.
+    </p>
+
+    <p class="contact-meta">
+      Communication is primarily handled by email.<br/>
+      Calls or meetings are arranged only when needed.
     </p>
 
     <a href="https://forms.gle/8yRscJCoRtUdDftw5" target="_blank" class="btn">
@@ -286,6 +473,12 @@ section{padding:80px 40px}
     </a>
   </div>
 </section>
+
+<footer>
+  <div class="footer-inner">
+    Julia Shin · Services
+  </div>
+</footer>
 
 </body>
 </html>
