@@ -306,7 +306,7 @@ section{padding:88px 40px}
   margin-bottom:6px;
 }
 
-/* 가격 강조 (너무 튀지 않게, 하지만 확실하게) */
+/* 가격 강조 */
 #services .card p:last-child{
   margin-top:16px;
   font-size:16px;
@@ -478,59 +478,35 @@ section{padding:88px 40px}
   flex-shrink:0;
 }
 .c-link-icon svg{width:14px;height:14px;stroke:rgba(255,255,255,0.6);fill:none;stroke-width:1.8}
-.contact-form{display:flex;flex-direction:column;gap:14px}
-.form-group{display:flex;flex-direction:column;gap:5px}
-.form-group label{
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.4);
-}
-.form-group input,.form-group textarea{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  color:var(--white);
-  font-family:var(--f);
-  font-size:14px;
-  padding:11px 14px;
-  border-radius:4px;
-  outline:none;
-  transition:border-color .2s;
-}
-.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.2)}
-.form-group input:focus,.form-group textarea:focus{border-color:rgba(42,132,240,0.6)}
-.form-group textarea{resize:vertical;min-height:90px}
-.form-submit{
-  background:var(--blue);
-  color:var(--white);
-  border:none;
-  font-family:var(--f);
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  padding:13px 24px;
-  border-radius:4px;
-  cursor:pointer;
-  align-self:flex-start;
-  transition:background .2s,transform .2s;
-}
-.form-submit:hover{background:var(--blue-l);transform:translateY(-1px)}
-.form-success{
-  display:none;
-  background:rgba(34,197,94,0.1);
-  border:1px solid rgba(34,197,94,0.3);
-  color:rgba(255,255,255,0.8);
-  padding:12px 16px;
-  border-radius:4px;
-  font-size:14px;
-}
 .bilingual-note{
   font-size:12px;
   color:rgba(255,255,255,0.28);
   letter-spacing:0.04em;
   margin-top:24px;
+}
+.contact-panel{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px;
+  padding:24px 22px;
+}
+.contact-panel h3{
+  font-size:16px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:10px;
+}
+.contact-panel p{
+  font-size:14px;
+  color:rgba(255,255,255,0.55);
+  line-height:1.75;
+  margin-bottom:18px;
+}
+.contact-helper{
+  font-size:13px;
+  color:rgba(255,255,255,0.34);
+  line-height:1.7;
+  margin-top:12px;
 }
 
 /* ── FOOTER ── */
@@ -557,12 +533,8 @@ footer{
   .step:nth-child(3),.step:nth-child(4){border-bottom:none}
   .cross-inner{grid-template-columns:1fr}
   .contact-wrap{grid-template-columns:1fr}
-  #services .cards{
-    grid-template-columns:1fr !important;
-  }
-  #services .services-bottom{
-    grid-template-columns:1fr;
-  }
+  #services .cards{grid-template-columns:1fr !important;}
+  #services .services-bottom{grid-template-columns:1fr;}
 }
 @media(max-width:640px){
   nav{padding:0 20px}
@@ -591,11 +563,11 @@ footer{
 <nav>
   <a href="#hero" class="nav-brand">JULIA SHIN</a>
   <ul class="nav-links">
-  <li><a href="#services">Services</a></li>
-  <li><a href="#what">Focus Areas</a></li>
-  <li><a href="#experience">Experience</a></li>
-  <li><a href="#how">Process</a></li>
-  <li><a href="#contact" class="nav-btn">Contact</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#what">Focus Areas</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#contact" class="nav-btn">Contact</a></li>
   </ul>
 </nav>
 
@@ -633,7 +605,12 @@ footer{
     <div class="rv-left">
       <p class="s-label">Real Value</p>
       <h2 class="s-title" style="color:var(--white)">What I Actually Do</h2>
-      <p class="rv-lead">Within the first 1–2 weeks,<br/>I identify what is structurally broken.<br/><br/>Then I define the operating structure<br/>that allows the system to run.</p>
+      <p class="rv-lead">
+Within the first 1–2 weeks,<br/>
+I identify what is structurally broken.<br/><br/>
+Then I define the operating structure<br/>
+that allows the system to run.
+</p>
 
       <ul class="rv-bullets">
         <li>Identify structural bottlenecks quickly</li>
@@ -652,7 +629,7 @@ footer{
 </section>
 
 <!-- SERVICES & ENGAGEMENT -->
-<section id="services">
+<section id="services" style="background:var(--white);border-top:1px solid var(--grey-2);border-bottom:1px solid var(--grey-2);">
   <div class="s-inner">
 
     <p class="s-label">Services &amp; Engagement</p>
@@ -673,7 +650,7 @@ footer{
       onboarding flow, and operating structure.
     </p>
 
-    <div class="cards">
+    <div class="cards" style="margin-bottom:44px;grid-template-columns:repeat(3,1fr);">
 
       <div class="card">
         <h3>Rapid Strategic Diagnosis</h3>
@@ -684,7 +661,7 @@ footer{
         <p style="margin-top:10px;font-size:13px;color:var(--grey-4);line-height:1.6;">
           60–90 min session · Key insights + next steps
         </p>
-        <p>
+        <p style="margin-top:14px;font-size:14px;font-weight:700;color:var(--ink);">
           Starting from ₩290,000
         </p>
       </div>
@@ -697,7 +674,7 @@ footer{
         <p style="margin-top:10px;font-size:13px;color:var(--grey-4);line-height:1.6;">
           Expansion strategy · Target / channel / partner structure · Priority roadmap
         </p>
-        <p>
+        <p style="margin-top:14px;font-size:14px;font-weight:700;color:var(--ink);">
           Starting from ₩990,000
         </p>
       </div>
@@ -715,7 +692,7 @@ footer{
           Who you work with · How onboarding happens · How operations run without constant manual work ·
           How performance is tracked and improved
         </p>
-        <p>
+        <p style="margin-top:14px;font-size:14px;font-weight:700;color:var(--ink);">
           Starting from ₩2,500,000
         </p>
       </div>
@@ -929,29 +906,22 @@ footer{
           </a>
         </div>
       </div>
+
       <div>
-        <form class="contact-form" id="contactForm"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name" required/>
-          </div>
-          <div class="form-group">
-            <label>Company</label>
-            <input type="text" name="company" placeholder="Your organization"/>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="work@company.com" required/>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea name="message" placeholder="Briefly describe what you're working on." required></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send Message</button>
-          <div class="form-success" id="formSuccess">Message received — I'll be in touch within 2 business days.</div>
-        </form>
+        <div class="contact-panel">
+          <h3>Request Advisory</h3>
+          <p>
+            A short intake form helps me understand your current situation,
+            urgency, and whether the engagement is the right fit.
+          </p>
+          <a href="https://forms.gle/8yRscJCoRtUdDftw5" target="_blank" class="btn btn-solid">
+            Open Inquiry Form
+          </a>
+          <p class="contact-helper">
+            You’ll be redirected to a short Google form.<br/>
+            한국어 문의 가능합니다.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -962,25 +932,5 @@ footer{
   <span class="footer-l">Julia Shin · Cross-Border Strategy</span>
   <span class="footer-r">Seoul, South Korea</span>
 </footer>
-
-<script>
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  if(form){
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      try {
-        const r = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-        if(r.ok){
-          form.reset();
-          success.style.display='block';
-          form.querySelector('.form-submit').style.display='none';
-        }
-      } catch {
-        form.submit();
-      }
-    });
-  }
-</script>
 </body>
 </html>
