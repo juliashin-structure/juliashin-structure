@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Julia Shin · Scale-up OS Architect</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#0D1B2A;
+  --navy-2:#162032;
+  --navy-3:#1E2E42;
+  --blue:#1A6FD4;
+  --blue-l:#2A84F0;
+  --white:#FFFFFF;
+  --grey-1:#F5F6F8;
+  --grey-2:#E8EAED;
+  --grey-4:#6B7280;
+  --ink:#111827;
+  --f:'Inter',system-ui,sans-serif;
+}
+
+body{font-family:var(--f);color:var(--ink);background:var(--white);font-size:16px}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(13,27,42,0.97);
+  padding:0 40px;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{color:#fff;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:12px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;}
+.nav-links a:hover{color:#fff}
+.nav-btn{background:var(--blue);color:#fff;padding:6px 14px;border-radius:4px}
+
+/* HERO */
+#hero{
+  background:var(--navy);
+  padding:120px 40px 80px;
+  color:#fff;
+}
+.hero-title{font-size:48px;font-weight:800;margin-bottom:20px}
+.hero-desc{color:rgba(255,255,255,0.7);line-height:1.7;max-width:700px;margin-bottom:20px}
+.hero-kr{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:30px}
+
+/* SECTION */
+section{padding:80px 40px}
+.s-inner{max-width:1000px;margin:0 auto}
+.s-title{font-size:32px;font-weight:800;margin-bottom:20px}
+.s-sub{color:var(--grey-4);margin-bottom:40px;line-height:1.7}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--grey-2);padding:24px;border-radius:6px;background:#fff}
+.card h3{margin-bottom:10px}
+.card p{color:var(--grey-4);font-size:14px;line-height:1.6}
+.price{margin-top:16px;font-weight:700}
+
+/* CTA */
+.btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 20px;text-decoration:none;border-radius:4px;font-weight:600}
+
+/* DARK SECTION */
+.dark{background:var(--navy);color:#fff}
+.dark .s-sub{color:rgba(255,255,255,0.6)}
+.dark .card{background:var(--navy-2);border-color:rgba(255,255,255,0.08)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">JULIA SHIN</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#contact" class="nav-btn">Start</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="s-inner">
+    <h1 class="hero-title">
+      The Operating System That Drives Real Growth
+    </h1>
+    <p class="hero-desc">
+      Not another PM. Not another tool.<br/>
+      I design the system that makes your business scale.
+    </p>
+    <p class="hero-kr">
+      단순한 PM이 아닙니다.<br/>
+      서비스가 돌아가게 만드는 운영 체계를 설계합니다.
+    </p>
+
+    <a href="https://forms.gle/jk2HGQ6W2jJ9naSPA" class="btn">Start Diagnosis</a>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+  <div class="s-inner">
+    <h2 class="s-title">Operational Debt</h2>
+    <p class="s-sub">
+      Fragmented workflows. Repeated manual work. Dependency on key people.<br/>
+      Onboarding friction. Communication chaos. Tool sprawl.<br/><br/>
+      <strong>This is not an execution problem. This is a system design failure.</strong><br/>
+      이것은 실행 문제가 아니라 시스템 설계 실패입니다.
+    </p>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework">
+  <div class="s-inner">
+    <h2 class="s-title">Strategic Approach</h2>
+    <p class="s-sub">귀사의 운영 체계(OS)를 구축하는 4단계 정밀 프로세스</p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Operational Audit</h3>
+        <p>구조화된 진단으로 운영 부채 파악</p>
+      </div>
+
+      <div class="card">
+        <h3>Discovery</h3>
+        <p>근본 원인 및 구조 문제 정의</p>
+      </div>
+
+      <div class="card">
+        <h3>Architecture</h3>
+        <p>운영 체계 및 자동화 구조 설계</p>
+      </div>
+
+      <div class="card">
+        <h3>Implementation</h3>
+        <p>Scale-up OS 구축 및 실행</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:40px;font-size:14px;color:var(--grey-4)">
+      All engagements are conducted under strict NDA.<br/>
+      모든 프로젝트는 NDA 하에 진행됩니다.
+    </p>
+
+    <a href="https://forms.gle/jk2HGQ6W2jJ9naSPA" class="btn" style="margin-top:20px;">Start Diagnosis</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="dark">
+  <div class="s-inner">
+    <h2 class="s-title">Services</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Operational Audit</h3>
+        <p>운영 병목 진단 및 구조 문제 식별</p>
+        <p class="price">₩1.5M</p>
+      </div>
+
+      <div class="card">
+        <h3>Scale-up OS Design</h3>
+        <p>운영 체계 설계 및 시스템 구축</p>
+        <p class="price">₩10M – ₩25M</p>
+      </div>
+
+      <div class="card">
+        <h3>Fractional Ops</h3>
+        <p>운영 시스템 지속 개선 및 최적화</p>
+        <p class="price">₩3M / month</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI DEFENSE -->
+<section>
+  <div class="s-inner">
+    <h2 class="s-title">AI is Not the Solution</h2>
+    <p class="s-sub">
+      We don’t install AI. We design the system where AI can operate.<br/>
+      우리는 AI를 도입하지 않습니다. AI가 작동할 수 있는 구조를 설계합니다.<br/><br/>
+      Tool adoption ≠ system design.
+    </p>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section>
+  <div class="s-inner">
+    <h2 class="s-title">What You Actually Get</h2>
+
+    <div class="cards">
+      <div class="card"><p>SOP (KR/EN)</p></div>
+      <div class="card"><p>Onboarding architecture</p></div>
+      <div class="card"><p>Workflow structure</p></div>
+      <div class="card"><p>Dashboard</p></div>
+      <div class="card"><p>Process map</p></div>
+      <div class="card"><p>AI integration logic</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="dark">
+  <div class="s-inner">
+    <h2 class="s-title">Start with a structured diagnosis</h2>
+    <p class="s-sub">15분 무료 운영 진단 세션 예약</p>
+
+    <a href="https://forms.gle/jk2HGQ6W2jJ9naSPA" class="btn">Start Diagnosis</a>
+
+    <p style="margin-top:20px;color:rgba(255,255,255,0.5)">
+      Email: yj.shin1q@gmail.com
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--navy);color:#fff;padding:20px;text-align:center;">
+  <p>The moment your system changes, your growth changes.</p>
+  <p style="opacity:0.5">운영 구조가 바뀌는 순간, 성장 속도도 바뀝니다.</p>
+</footer>
+
+</body>
+</html>
