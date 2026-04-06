@@ -14,8 +14,8 @@
       --accent:  #1e3a5f;
       --hi:      #2563eb;
       --text:    #1c2333;
-      --muted:   #475569; /* 더 진하게 */
-      --faint:   #64748b;
+      --muted:   #64748b;
+      --faint:   #94a3b8;
       --line:    #e2e8f0;
       --card:    #ffffff;
       --bg:      #f8f9fb;
@@ -26,17 +26,23 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
+      font-weight: 400;
       max-width: 500px;
       margin: 0 auto;
       padding: 0 24px 64px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .topbar {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 22px 0 0;
-      font-size: 11px;
+      font-size: 10px;
       color: var(--faint);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
     .profile {
@@ -51,95 +57,397 @@
       margin: 0 auto 20px;
       overflow: hidden;
       border: 2px solid var(--line);
+      background: var(--card);
     }
 
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .name {
       font-family: 'Playfair Display', serif;
       font-size: 30px;
+      font-weight: 500;
       color: var(--blue);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
     }
 
     .name-kr {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--faint);
-      margin-top: 6px;
+      margin-top: 5px;
+      letter-spacing: 0.5px;
     }
 
     .role-badge {
+      display: inline-block;
       margin-top: 14px;
-      font-size: 11px;
-      padding: 8px 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .hook {
-      margin-top: 18px;
-      font-size: 18px;
+      margin-top: 16px;
+      font-size: 16px;
       font-weight: 600;
+      color: var(--blue);
+      line-height: 1.55;
+      letter-spacing: -0.2px;
     }
 
     .tagline-intro {
-      margin-top: 12px;
-      font-size: 13.5px;
-      line-height: 1.8;
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 400;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .tagline {
-      margin-top: 18px;
-      font-size: 15px;
+      margin-top: 16px;
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.8;
+      font-weight: 400;
     }
 
     .tagline-kr {
-      font-size: 13px;
-      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    .statement {
+      background: var(--blue);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin: 4px 0 28px;
+    }
+
+    .statement p {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,.92);
+      line-height: 1.45;
+      letter-spacing: -0.2px;
+    }
+
+    .statement span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      color: rgba(255,255,255,.38);
+      margin-top: 14px;
+      line-height: 1.6;
+      font-style: normal;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
     }
 
     .label {
-      font-size: 11px;
-      letter-spacing: 2px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--hi);
       margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .solve-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .solve-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--hi);
+    }
+
+    .solve-card strong {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 5px;
+      line-height: 1.35;
     }
 
     .solve-card span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .works {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .work:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .work-co {
       font-size: 13px;
-      line-height: 1.7;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 3px;
     }
 
     .work-sub {
-      font-size: 12.5px;
-      line-height: 1.7;
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .work-tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--faint);
+      text-align: right;
+      white-space: nowrap;
+      padding-top: 2px;
+      letter-spacing: 0.3px;
+    }
+
+    .industries {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ind-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 15px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .ind-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--hi);
+      margin-top: 5px;
+      flex-shrink: 0;
+      opacity: .6;
+    }
+
+    .ind-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 4px;
     }
 
     .ind-sub {
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .field-caption {
-      font-size: 12.5px;
-    }
-
-    /* 🔥 핵심: 컨설팅 섹션 강화 */
-    .cta-card {
-      border: 1.5px solid var(--hi);
-      background: #f8fbff;
-    }
-
-    .cta-title {
-      font-size: 17px;
+      font-size: 12px;
+      color: var(--muted);
       line-height: 1.6;
     }
 
-    .cta-body {
-      font-size: 13.5px;
-      line-height: 1.75;
+    .field-section {
+      margin: 28px 0;
     }
 
+    .field-img {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .field-img img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 240px;
+    }
+
+    .field-caption {
+      margin-top: 10px;
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .field-caption strong {
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .cta-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    .cta-overline {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--hi);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cta-title {
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--blue);
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+
+    .cta-body {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+
+    .cta-link:hover {
+      border-color: var(--hi);
+      box-shadow: 0 2px 10px rgba(37,99,235,.08);
+      transform: translateY(-1px);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .link-row {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .link-row:hover {
+      border-color: var(--hi);
+      box-shadow: 0 2px 10px rgba(37,99,235,.07);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .link-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .link-sub {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.45;
+    }
+
+    .arrow {
+      font-size: 13px;
+      color: var(--faint);
+      flex-shrink: 0;
+    }
+
+    .note {
+      font-size: 11.5px;
+      color: var(--faint);
+      text-align: center;
+      margin-top: 28px;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 10.5px;
+      color: #cbd5e1;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
@@ -149,95 +457,216 @@
     <span>Seoul · Global</span>
   </div>
 
+  <!-- IDENTITY -->
   <div class="profile">
     <div class="avatar">
-      <img src="IMG_0669.jpeg" />
+      <img src="IMG_0669.jpeg" alt="Julia Shin" />
     </div>
-
     <div class="name">Julia Shin</div>
     <div class="name-kr">신유진</div>
 
-    <div class="role-badge">Strategy · Systems · Global</div>
+    <div class="role-badge">Strategy · Solutions · Global Partnerships</div>
 
     <p class="hook">I fix systems that don’t scale.</p>
 
     <p class="tagline-intro">
-      Industry · Technology · Strategy translator
+      Industry · Technology · Strategy translator operating across payments, AI systems, and global platform ecosystems.
     </p>
 
     <p class="tagline">
-      Working across platforms, AI, and global systems
+      Working across payments, platforms, and AI systems<br />
+      where technology, business, and execution intersect.
     </p>
 
-    <p class="tagline-kr">
-      구조가 무너진 서비스와 조직을 다시 작동하게 만드는 일을 합니다
-    </p>
+    <p class="tagline-kr">기술과 비즈니스 사이에서 서비스가 실제로 작동하는 구조를 설계합니다.</p>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <div class="statement">
+    <p>From ambiguity<br />to scalable structure.</p>
+    <span>Payments · AI · Industrial Systems · Global B2B</span>
+  </div>
+
+  <!-- FOCUS AREAS -->
+  <div class="label">Focus Areas</div>
+  <div class="solve-list">
+    <div class="solve-card">
+      <strong>Cross-Border Systems & Localization</strong>
+      <span>Payment infrastructure, partner ecosystem mapping, and onboarding architecture across markets and regulatory contexts.</span>
+    </div>
+    <div class="solve-card">
+      <strong>Business-Technology Translation</strong>
+      <span>Translating technical complexity into strategic clarity — and business direction into executable structure.</span>
+    </div>
+    <div class="solve-card">
+      <strong>Complex Program & Platform Alignment</strong>
+      <span>Rebuilding coordination, communication, and execution structure across multi-party programs and platform ecosystems.</span>
+    </div>
+    <div class="solve-card">
+      <strong>Global Partnership & Operations Design</strong>
+      <span>Structuring cross-border partnerships, multi-stakeholder coordination, and scalable operational frameworks.</span>
+    </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- 🔥 타이틀 개선 -->
-  <div class="label">Selected Work & Impact</div>
-
+  <!-- SELECTED PROGRAMS -->
+  <div class="label">Selected Programs & Systems</div>
   <div class="works">
     <div class="work">
       <div>
         <div class="work-co">KakaoPay</div>
-        <div class="work-sub">40+ partner integrations · system structure · onboarding architecture</div>
+        <div class="work-sub">Cross-border payment infrastructure · Alipay+ ecosystem · platform expansion</div>
       </div>
       <div class="work-tag">FinTech</div>
     </div>
-
     <div class="work">
       <div>
         <div class="work-co">DeltaX</div>
-        <div class="work-sub">Project recovery · stakeholder realignment · system clarity</div>
+        <div class="work-sub">AI program recovery · stakeholder realignment · technical-business translation</div>
       </div>
-      <div class="work-tag">AI</div>
+      <div class="work-tag">AI / CV</div>
     </div>
-
     <div class="work">
       <div>
         <div class="work-co">GE Healthcare</div>
-        <div class="work-sub">12-organization dashboard · executive decision system</div>
+        <div class="work-sub">12-organization coordination · executive intelligence system · CEO/EVP support</div>
       </div>
       <div class="work-tag">Enterprise</div>
+    </div>
+    <div class="work">
+      <div>
+        <div class="work-co">mAy-I · VivaTech</div>
+        <div class="work-sub">Global B2B engagement · AI solution positioning · international PoC development</div>
+      </div>
+      <div class="work-tag">Global GTM</div>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- 🔥 핵심: 컨설팅 강조 -->
-  <div class="label">Advisory / 구조 컨설팅</div>
-
-  <div class="cta-card">
-
-    <div class="cta-overline">System Advisory</div>
-
-    <div class="cta-title">
-      If your product exists but doesn’t scale,<br/>
-      the problem is not execution.<br/>
-      It is structure.
+  <!-- INDUSTRY CONTEXT -->
+  <div class="label">Industry Context</div>
+  <div class="industries">
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">FinTech &amp; Cross-Border Payments</div>
+        <div class="ind-sub">KakaoPay — wallet integrations, PG/VAN coordination, payment ops automation, localization architecture</div>
+      </div>
     </div>
-
-    <div class="cta-body">
-      반복되는 운영, 복잡한 협업, 느린 온보딩.<br/>
-      이 문제들은 사람의 문제가 아니라 구조의 문제입니다.<br/><br/>
-
-      I identify what is structurally broken,<br/>
-      and design systems that run without constant intervention.
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">AI &amp; Computer Vision</div>
+        <div class="ind-sub">DeltaX · mAy-I — retail behavior analytics, vehicle recognition systems, enterprise AI delivery</div>
+      </div>
     </div>
-
-    <div class="cta-body" style="margin-top:10px;">
-      한국 기업 문의 가능합니다.<br/>
-      구조 진단 및 협업 설계 중심으로 진행됩니다.
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">Healthcare &amp; Industrial Systems</div>
+        <div class="ind-sub">GE Healthcare — ultrasound division, 12-organization intelligence dashboard, executive reporting</div>
+      </div>
     </div>
-
-    <a href="https://juliashin-structure.github.io/juliashin-structure/advise.html" class="cta-link">
-      Start Advisory ↗
-    </a>
-
+    <div class="ind-card">
+      <div class="ind-dot"></div>
+      <div>
+        <div class="ind-title">Global B2B &amp; Retail Tech</div>
+        <div class="ind-sub">VivaTech Paris — Samsung, LG, Hyundai ecosystem engagement, international buyer development</div>
+      </div>
+    </div>
   </div>
+
+  <!-- FIELD PHOTO -->
+  <div class="field-section">
+    <div class="field-img">
+      <img src="IMG_0665.jpeg" alt="VivaTech Paris" />
+    </div>
+    <p class="field-caption">
+      <strong>VivaTech, Paris</strong> — Selected to represent the company in buyer-facing conversations around AI retail solutions, contributing to PoC pipeline development in an international B2B context.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ADVISORY -->
+  <div class="label">Advisory</div>
+  <div class="cta-card">
+    <div class="cta-overline">Selective advisory</div>
+    <div class="cta-title">
+      If your product exists but doesn’t scale,<br />
+      the problem may not be execution.<br />
+      It may be structure.
+    </div>
+    <div class="cta-body">
+      Most relevant for teams facing repeated operational friction, unclear onboarding, cross-functional coordination issues, or systems that still depend too much on manual intervention.
+    </div>
+    <a href="https://juliashin-structure.github.io/juliashin-structure/advise.html" class="cta-link">
+      View Advisory Page <span>↗</span>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONNECT -->
+  <div class="label">Connect</div>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/youjin-s" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">in</div>
+        <div>
+          <div class="link-title">LinkedIn</div>
+          <div class="link-sub">Julia Shin · youjin-s</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+    <a href="https://substack.com/@outsidecorporations?r=54h6wx&utm_medium=ios&utm_source=profile&shareImageVariant=image" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">SS</div>
+        <div>
+          <div class="link-title">Substack</div>
+          <div class="link-sub">On market structure, leverage, and economic systems</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ARCHIVE -->
+  <div class="label">Archive</div>
+  <div class="links">
+    <a href="https://instagram.com/biztech.bridge" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">BT</div>
+        <div>
+          <div class="link-title">BizTech Bridge</div>
+          <div class="link-sub">Platform · Brand Structure Notes</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+    <a href="https://instagram.com/material.shift" target="_blank" class="link-row">
+      <div class="link-left">
+        <div class="link-icon">MS</div>
+        <div>
+          <div class="link-title">Material Shift</div>
+          <div class="link-sub">Supply Chain · Price Structure</div>
+        </div>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <p class="note">
+    Writing, projects, and selective conversations<br />
+    across platforms, payments, and global systems.
+  </p>
+
+  <footer>© Julia Shin</footer>
 
 </body>
 </html>
