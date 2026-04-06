@@ -651,8 +651,8 @@ footer{
   nav{padding:0}
   .nav-inner{padding:0 18px;height:64px}
   .nav-links li:not(:last-child){display:none}
-  section{padding:68px 18px}
-  #hero{padding:86px 18px 56px}
+  section{padding:68px 26px}
+  #hero{padding:96px 26px 56px}
   .hero-tag{font-size:12px;padding:8px 12px;margin-bottom:22px}
   .hero-sub{font-size:24px}
   .hero-sub-kr{font-size:19px}
@@ -677,13 +677,9 @@ footer{
   .links-grid{
     grid-template-columns:1fr;
   }
-  .trustbar{padding:16px 18px}
+  .trustbar{padding:16px 26px}
   .trustbar-inner{font-size:12px}
-  footer{padding:20px 18px}
-
-      section{
-      padding:68px 24px;
-    }
+  footer{padding:20px 26px}
 
     #hero{
       padding:96px 24px 56px;
@@ -905,28 +901,59 @@ h1, h2, h3, p {
   margin: 20px 0 16px;
 }
 
-/* --- FIX: dark background text visibility --- */
+/* --- FIX: light note / dark panel text visibility --- */
 
-.ai-note,
+/* 밝은 배경인 AI note */
+.ai-note {
+  background: var(--surface);
+  color: #0f172a;
+}
+
+.ai-note strong {
+  color: #0f172a;
+}
+
+.ai-note .kr {
+  color: #334155;
+}
+
+/* 어두운 배경인 contact 영역 */
 .contact-panel,
 .contact-meta,
-.contact-helper {
+.contact-helper,
+.c-link {
   color: rgba(255,255,255,0.92);
 }
 
-.ai-note .kr,
-.contact-panel .kr {
-  color: rgba(255,255,255,0.85);
+.contact-panel p,
+.contact-panel .kr,
+.contact-meta .kr,
+.contact-helper {
+  color: rgba(255,255,255,0.88);
 }
 
-/* --- PC에서는 <br/> 무시, 모바일에서는 <br/> 적용 --- */
-.s-title br {
-  display: none;
+/* 모바일 - 카드 내 좌우 여백 확보 */
+
+@media(max-width:640px){
+  .work-card,
+  .enable-card,
+  .step,
+  .ai-card,
+  .evidence-card{
+    padding:28px 22px;
+  }
 }
 
 @media(max-width:640px){
-  .s-title br {
-    display: block;
+  .s-sub,
+  .hero-desc,
+  .rv-context{
+    max-width:100%;
+  }
+}
+@media(max-width:640px){
+  .s-title{
+    letter-spacing:-0.02em;
   }
 }
   
@@ -1083,7 +1110,8 @@ h1, h2, h3, p {
       <div class="work-card">
         <h3>Diagnose</h3>
         <p>Identify the real structural bottleneck behind repeated execution problems.</p>
-        <span class="kr">겉으로 드러난 문제가 아니라, 반복되는 문제를 만드는 구조를 먼저 진단합니다.</span>
+        <span class="kr">겉으로 드러난 문제가 아니라,<br/>
+          반복되는 문제를 만드는 구조를 먼저 진단합니다.</span>
       </div>
       <div class="work-card">
         <h3>Design</h3>
@@ -1264,10 +1292,22 @@ h1, h2, h3, p {
     <p class="s-sub kr">구조, 시장, 운영에 대한 기록을 이어갑니다.</p>
 
     <div class="links-grid">
+      
+      <a class="link-card" href="https://instagram.com/biztech.bridge" target="_blank">
+        <h3>BizTech</h3>
+        <p>Structure, systems, and operational thinking.<span class="kr">구조, 시스템, 운영 관점 기록</span></p>
+      </a>
+    
+      <a class="link-card" href="https://www.instagram.com/material.shift" target="_blank">
+        <h3>Pistachio</h3>
+        <p>Market and consumer trend notes.<span class="kr">시장과 소비 흐름에 대한 기록</span></p>
+      </a>
+      
       <a class="link-card" href="https://substack.com/@outsidecorporations?r=54h6wx&utm_medium=ios&utm_source=profile&shareImageVariant=image" target="_blank">
         <h3>Substack</h3>
         <p>Structure, leverage, and market interpretation.</p>
       </a>
+     
       <a class="link-card" href="https://www.threads.com/@biztech.bridge?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
         <h3>Threads · BizTech</h3>
         <p>
@@ -1275,7 +1315,9 @@ h1, h2, h3, p {
           <span class="kr">구조, 시장, 운영에 대한 짧은 인사이트 기록</span>
         </p>
       </a>
+      
     </div>
+    
   </div>
 </section>
 
