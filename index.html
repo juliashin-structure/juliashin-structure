@@ -498,8 +498,35 @@
     @media (max-width: 640px) {
       body {
         padding: 8px 28px 64px;
+      .experience-card,
+      .evidence-card {
+        padding: 24px 20px;
       }  
     }
+
+  .evidence-card {
+    border-radius: 16px;
+  }
+
+    /* 🔥 EXPERIENCE / INDUSTRY 텍스트 강화 */
+
+  .experience-card h3,
+  .evidence-card h3 {
+    font-size: 22px;
+  }
+  
+  .experience-card p,
+  .evidence-card p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  /* 숫자 강조 (33%, 12 같은 거) */
+  .evidence-card .metric,
+  .evidence-card strong {
+    font-size: 28px;
+    font-weight: 700;
+  }
   </style>
 </head>
 <body>
