@@ -940,7 +940,7 @@ h1, h2, h3, p {
   .step,
   .ai-card,
   .evidence-card{
-    padding:28px 22px;
+    padding:28px 20px;
   }
 }
 
@@ -1011,6 +1011,52 @@ h1, h2, h3, p {
 .ai-card p {
   color: #0f172a !important;
 }
+
+body {
+  word-break: keep-all;
+}
+
+p, .kr {
+  line-height: 1.65;
+}
+
+h2, h3 {
+  line-height: 1.3;
+}
+
+p {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ai-card p,
+.step p,
+.work-card p,
+.enable-card p,
+.evidence-card p {
+  color: #334155;
+}
+
+.ai-card .kr,
+.step .kr,
+.work-card .kr {
+  color: #475569;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+}
+
+/* 🔥 rv-context 흰글씨 강제 제거 */
+
+.rv-context {
+  color: #0f172a !important;
+}
+
+.rv-context.kr {
+  color: #334155 !important;
+}
+
 </style>
 
   
@@ -1157,8 +1203,8 @@ h1, h2, h3, p {
 <section id="howiwork">
   <div class="s-inner">
     <p class="s-label">How I Work · 협업 방식</p>
-    <h2 class="s-title">서비스를 파는 것이 아니라,<br/>구조를 바꾸는 방식으로 일합니다.</h2>
-    <p class="s-sub kr">정해진 상품을 판매하기보다, 현재 구조에서 무엇이 막혀 있는지 파악하고 그에 맞는 설계를 제안합니다.</p>
+    <h2 class="s-title">상품이 아니라 구조를 설계합니다.</h2>
+    <p class="s-sub kr">정해진 상품을 판매하기보다, 지금 막힌 구조를 파악하고 그에 맞는 설계를 제안합니다.</p>
 
     <div class="work-grid">
       <div class="work-card">
@@ -1353,8 +1399,9 @@ h1, h2, h3, p {
       </a>
     
       <a class="link-card" href="https://www.instagram.com/material.shift" target="_blank">
-        <h3>Pistachio</h3>
-        <p>Market and consumer trend notes.<span class="kr">시장과 소비 흐름에 대한 기록</span></p>
+        <h3>Material Shift</h3>
+        <p>Market and consumer trend notes.
+          <span class="kr">시장과 소비 흐름에 대한 기록</span></p>
       </a>
       
       <a class="link-card" href="https://substack.com/@outsidecorporations?r=54h6wx&utm_medium=ios&utm_source=profile&shareImageVariant=image" target="_blank">
