@@ -441,6 +441,101 @@
       background: rgba(37, 99, 235, 0.14);
     }
 
+
+    /* Personal Venture · MesAile */
+    .venture-card {
+      background: linear-gradient(180deg, #faf8f3 0%, #f3efe7 100%);
+      border: 1px solid #e6e1d7;
+      border-radius: 18px;
+      padding: 26px 22px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .venture-card::after {
+      content: "M";
+      position: absolute;
+      right: 18px;
+      top: 6px;
+      font-family: 'Playfair Display', serif;
+      font-size: 88px;
+      font-style: italic;
+      color: rgba(70, 97, 140, 0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .venture-overline {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #46618C;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .venture-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      line-height: 1.3;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .venture-subtitle {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #46618C;
+      margin-bottom: 16px;
+    }
+
+    .venture-body {
+      font-size: 15.5px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 14px;
+      max-width: 410px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .venture-meaning {
+      font-size: 14.5px;
+      color: var(--blue);
+      font-weight: 650;
+      line-height: 1.75;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .venture-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #ffffff;
+      background: #46618C;
+      border: 1px solid #46618C;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .1px;
+      transition: transform .2s, background .2s, box-shadow .2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .venture-link:hover {
+      transform: translateY(-2px);
+      background: #324B70;
+      box-shadow: 0 10px 20px rgba(70, 97, 140, 0.18);
+    }
+
     .links {
       display: flex;
       flex-direction: column;
@@ -516,7 +611,7 @@
     footer {
       text-align: center;
       margin-top: 42px;
-      font-size: 14x;
+      font-size: 14px;
       color: #64748b;
       letter-spacing: 0.9px;
       font-weight: 700;
@@ -874,6 +969,34 @@
         유럽 최대 B2B 테크 컨퍼런스 VivaTech에서 회사 대표로 참가. LVMH·로레알·에르메스·샤넬·디올 임원 대상 AI 리테일 솔루션을 피칭하고, 100+ 리드 파이프라인 구축 및 Orange와 2주 내 PoC 전환을 달성했습니다.
       </span>
     </p>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- PERSONAL VENTURE · MesAile -->
+  <div class="label">Personal Venture · 개인 브랜드</div>
+  <div class="venture-card">
+    <div class="venture-overline">MesAile · Since 2022</div>
+    <div class="venture-title">MesAile</div>
+    <div class="venture-subtitle">Identity · Strategy · Taste</div>
+    <p class="venture-body">
+      A personal brand and perspective archive that began with image consulting and evolved to connect identity, taste, strategy, technology, and writing.
+      <span class="kr">
+        이미지 컨설팅에서 시작해 정체성, 미감, 전략, 기술과 글을 연결하는 Julia Shin의 개인 브랜드이자 관점의 아카이브입니다.
+      </span>
+    </p>
+    <p class="venture-meaning">
+      MesAile = 나의 날개. 나만의 방향으로 다시 펼쳐가는 이름입니다.
+    </p>
+    <a
+      href="https://juliashin-structure.github.io/mesaile/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="venture-link"
+    >
+      Explore MesAile ↗
+    </a>
   </div>
 
   <div class="divider"></div>
