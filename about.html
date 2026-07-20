@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Julia — My Story</title>
+  <meta name="description" content="기술과 비즈니스, 사람과 삶의 방향을 연결하며 상상한 삶을 직접 만들어가는 Julia Shin의 이야기입니다.">
+  <meta name="theme-color" content="#F7F4EF">
+  <meta property="og:title" content="About Julia — My Story">
+  <meta property="og:description" content="상상한 삶을 전략적으로 직접 만들어가는 Julia Shin의 이야기.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+  <style>
+    :root{
+      --paper:#F7F4EF;
+      --paper-deep:#ECE5DB;
+      --white:#FFFDFC;
+      --ink:#1D1B18;
+      --soft:#686159;
+      --faint:#9B938A;
+      --line:#DED6CC;
+      --accent:#7B3F2A;
+      --green:#173E35;
+      --sans:"DM Sans","Pretendard",system-ui,sans-serif;
+      --serif:"Newsreader","Noto Serif KR",serif;
+      --page:clamp(22px,5vw,64px);
+      --wide:1160px;
+      --reading:760px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.75;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    ::selection{background:rgba(123,63,42,.18)}
+
+    nav{
+      position:fixed;inset:0 0 auto 0;z-index:30;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px var(--page);
+      transition:background .35s ease,border-color .35s ease,backdrop-filter .35s ease;
+    }
+    nav.scrolled{
+      background:rgba(247,244,239,.9);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .wordmark{
+      text-decoration:none;font-size:14px;font-weight:700;
+      letter-spacing:.09em;text-transform:uppercase;
+    }
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .nav-links a{font-size:13px;text-decoration:none;color:var(--soft)}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-links .home{color:var(--accent);font-weight:600}
+
+    section{padding:128px var(--page)}
+    .wrap{width:100%;max-width:var(--wide);margin:0 auto}
+    .reading{width:100%;max-width:var(--reading)}
+    .eyebrow{
+      margin-bottom:18px;color:var(--accent);font-size:12px;font-weight:700;
+      letter-spacing:.18em;text-transform:uppercase;
+    }
+    h2{
+      font-family:var(--serif);font-size:clamp(2rem,4.3vw,3.6rem);
+      line-height:1.12;font-weight:500;letter-spacing:-.025em;
+    }
+    .lead{margin-top:28px;color:var(--soft);font-size:clamp(1.06rem,1.8vw,1.24rem)}
+
+    .hero{
+      min-height:100vh;display:flex;align-items:center;padding-top:150px;
+      background:
+        radial-gradient(circle at 84% 17%,rgba(123,63,42,.11),transparent 25%),
+        radial-gradient(circle at 10% 82%,rgba(23,62,53,.08),transparent 26%);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:78px;align-items:center}
+    .hero-kicker{margin-bottom:28px;color:var(--green);font-size:13px;font-weight:700;letter-spacing:.08em}
+    h1{
+      font-size:clamp(3.6rem,8.3vw,7.2rem);line-height:.92;
+      letter-spacing:-.058em;font-weight:700;
+    }
+    h1 span{display:block}
+    h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--accent)}
+    .hero-copy{
+      max-width:670px;margin-top:38px;font-family:var(--serif);
+      font-size:clamp(1.25rem,2.1vw,1.65rem);line-height:1.55;
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:42px}
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:46px;padding:12px 18px;border:1px solid var(--ink);
+      text-decoration:none;font-size:13px;font-weight:600;transition:.25s ease;
+    }
+    .button.primary{background:var(--ink);color:var(--white)}
+    .button:hover{transform:translateY(-2px)}
+
+    .portrait{
+      position:relative;aspect-ratio:4/5;overflow:hidden;
+      border:1px solid var(--line);background:var(--paper-deep);
+    }
+    .portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 38%}
+    .portrait-label{
+      position:absolute;left:18px;bottom:18px;padding:9px 12px;
+      background:rgba(255,253,252,.88);backdrop-filter:blur(10px);
+      font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    }
+
+    .about{background:var(--ink);color:var(--white)}
+    .about .eyebrow{color:#D9A893}
+    .about-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:78px;align-items:start}
+    .about-statement{
+      font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);line-height:1.18;
+    }
+    .about-copy{display:grid;gap:22px;color:rgba(255,255,255,.76);font-size:1.06rem}
+    .about-copy strong{color:var(--white);font-weight:500}
+    .traits{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+    .trait{padding-top:16px;border-top:1px solid rgba(255,255,255,.18)}
+    .trait b{display:block;margin-bottom:6px;color:#F0C4B2;font-size:13px}
+    .trait span{color:rgba(255,255,255,.67);font-size:14px}
+
+    .story-head{display:grid;grid-template-columns:290px 1fr;gap:70px;margin-bottom:66px}
+    .story-head .aside{
+      font-family:var(--serif);font-size:1.55rem;line-height:1.34;
+    }
+    .story-head .aside small{
+      display:block;margin-top:16px;font-family:var(--sans);font-size:13px;
+      line-height:1.7;color:var(--soft);
+    }
+    .timeline{max-width:820px;margin-left:auto}
+    .chapter{
+      position:relative;padding:0 0 54px 32px;border-left:1px solid var(--line);
+    }
+    .chapter:last-child{padding-bottom:0}
+    .chapter::before{
+      content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;background:var(--accent);
+    }
+    .chapter .label{
+      color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    }
+    .chapter h3{
+      margin:7px 0 10px;font-family:var(--serif);font-size:clamp(1.45rem,2.8vw,2rem);font-weight:500;
+    }
+    .chapter p{color:var(--soft);font-size:1rem}
+    .chapter p + p{margin-top:12px}
+
+    .beliefs{background:var(--white)}
+    .belief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:50px}
+    .belief{
+      min-height:235px;padding:28px;border:1px solid var(--line);background:var(--paper);
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .belief .number{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em}
+    .belief h3{margin-top:12px;font-family:var(--serif);font-size:1.55rem;font-weight:500}
+    .belief p{margin-top:18px;color:var(--soft);font-size:14px}
+
+    .life-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+    .life-list{display:grid;gap:0;margin-top:38px}
+    .life-item{padding:20px 0;border-top:1px solid var(--line)}
+    .life-item h3{font-family:var(--serif);font-size:1.35rem;font-weight:500}
+    .life-item p{margin-top:7px;color:var(--soft);font-size:14px}
+    .quote-card{
+      position:sticky;top:120px;padding:38px;background:var(--paper-deep);border:1px solid var(--line);
+    }
+    .quote-card blockquote{
+      font-family:var(--serif);font-size:clamp(1.8rem,3.3vw,2.8rem);line-height:1.25;
+    }
+    .quote-card p{margin-top:24px;color:var(--soft);font-size:14px}
+
+    .connect{text-align:center;background:var(--paper-deep)}
+    .connect h2{max-width:800px;margin:0 auto}
+    .connect .lead{max-width:680px;margin-left:auto;margin-right:auto}
+    .connect-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}
+
+    footer{
+      padding:40px var(--page);border-top:1px solid var(--line);
+      color:var(--faint);font-size:12px;text-align:center;
+    }
+
+    .rise{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+    .rise.in{opacity:1;transform:none}
+
+    @media (max-width:900px){
+      .hero-grid,.about-grid,.story-head,.life-grid{grid-template-columns:1fr}
+      .portrait{max-width:470px}
+      .quote-card{position:static}
+      .timeline{margin-left:0}
+    }
+    @media (max-width:700px){
+      section{padding:96px var(--page)}
+      .nav-links a:not(.home){display:none}
+      .traits,.belief-grid{grid-template-columns:1fr}
+      h1{font-size:clamp(3.3rem,16vw,5.35rem)}
+      .hero{padding-top:125px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .rise{opacity:1;transform:none;transition:none}
+    }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a class="wordmark" href="index.html">Julia Shin</a>
+    <div class="nav-links">
+      <a href="#about">About Me</a>
+      <a href="#story">My Story</a>
+      <a href="#life">Beyond Work</a>
+      <a class="home" href="index.html">Back Home</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="hero-kicker rise">ABOUT JULIA · SEOUL · GLOBAL</p>
+          <h1 class="rise">
+            <span>I build</span>
+            <span>the life</span>
+            <span class="serif">I imagine.</span>
+          </h1>
+          <p class="hero-copy rise">
+            생각한 것은 가능한 한 직접 해보고,<br>
+            서로 다른 경험을 하나의 방향으로 연결하며 살아갑니다.
+          </p>
+          <div class="hero-actions rise">
+            <a class="button primary" href="#about">About Me</a>
+            <a class="button" href="#story">Read My Story</a>
+          </div>
+        </div>
+
+        <figure class="portrait rise">
+          <img src="assets/Julia.jpg" alt="Julia Shin" onerror="this.style.display='none'">
+          <figcaption class="portrait-label">Strategy · Curiosity · Good Energy</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow rise">About Me</p>
+          <p class="about-statement rise">
+            유행을 따라가기보다,<br>
+            내게 필요한 길을<br>
+            직접 만드는 사람.
+          </p>
+        </div>
+
+        <div>
+          <div class="about-copy rise">
+            <p>
+              나는 <strong>새로운 것을 시작하고, 복잡한 것을 구조화하며,
+              사람과 사람 사이의 언어를 연결할 때</strong> 가장 살아 있음을 느껴.
+            </p>
+            <p>
+              해외파는 아니지만 늘 더 큰 세상과 연결되고 싶었고,
+              정해진 배경이나 직함보다 지금 가진 것으로 무엇을 만들 수 있는지를 먼저 보며 살아왔어.
+            </p>
+            <p>
+              문과 출신으로 개발을 배우고, 이미지 컨설팅 브랜드를 창업하고,
+              글로벌 패션 현장부터 헬스케어·AI·핀테크·글로벌 비즈니스까지 건너온 것도 같은 이유야.
+              궁금한 세계가 생기면 바깥에서 바라보기보다 직접 들어가 배우는 편이거든.
+            </p>
+            <p>
+              나는 꽤 전략적이고 집요하지만, 삶이 성과표로만 남는 것은 원하지 않아.
+              좋은 사람, 건강한 몸, 미감과 유머, 자유로운 선택까지 함께 가져가는 삶을 만들고 싶어.
+            </p>
+          </div>
+
+          <div class="traits">
+            <div class="trait rise"><b>Straightforward</b><span>핵심은 분명하게 말하되 존중은 기본으로.</span></div>
+            <div class="trait rise"><b>Strategic</b><span>원하는 미래에서 현재의 행동을 역산하는 편.</span></div>
+            <div class="trait rise"><b>Curious</b><span>모르는 세계는 직접 들어가 구조를 파악해보기.</span></div>
+            <div class="trait rise"><b>Persistent</b><span>가능성을 발견하면 쉽게 놓지 않고 끝까지 밀기.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="wrap">
+        <div class="story-head">
+          <div class="aside rise">
+            운이 좋았고,<br>
+            노력도 많이 했어.
+            <small>
+              매번 가장 쉬운 길을 택하지는 않았지만,
+              돌아보면 서로 달라 보였던 경험들이 지금의 나를 만들었어.
+            </small>
+          </div>
+          <div>
+            <p class="eyebrow rise">My Story</p>
+            <h2 class="rise">직함보다 먼저 있었던<br>호기심과 추진력의 기록.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="chapter rise">
+            <span class="label">01 · Early Curiosity</span>
+            <h3>학교보다 세상이 어떻게 움직이는지가 궁금했어.</h3>
+            <p>
+              영어 토론, 세계사와 창의사고 수업을 좋아했지만 입시를 위한 공부에는 흥미를 잃었어.
+              대학에서는 수업만 듣기보다 축제기획단, 리포터즈, 학원 조교와 여러 아르바이트를 하며
+              사람과 조직, 돈과 일이 실제로 움직이는 방식을 먼저 배우고 싶었어.
+            </p>
+          </article>
+
+          <article class="chapter rise">
+            <span class="label">02 · Meeting the World</span>
+            <h3>해외로 나갈 수 없다면, 한국에 온 세계를 만나기로 했어.</h3>
+            <p>
+              코로나 시기 글로벌 패션모델 촬영 현장에서 통역 매니저로 일했어.
+              브랜드 클라이언트, 촬영감독, 스타일리스트와 모델 사이의 서로 다른 요구를 읽고
+              현장이 매끄럽게 굴러가도록 만드는 과정이 즐거웠어.
+            </p>
+            <p>
+              이때 이미 내가 단순한 통역보다 사람과 상황의 맥락을 파악하고 조율하는 일을 잘한다는 걸 알게 됐어.
+            </p>
+          </article>
+
+          <article class="chapter rise">
+            <span class="label">03 · Building My Own</span>
+            <h3>궁금하면 직접 들어가 보고, 필요하면 직접 만들었어.</h3>
+            <p>
+              잘되는 압구정 매장의 운영 방식이 궁금해 직접 파트타임으로 들어갔고,
+              그 경험과 오랫동안 쌓아온 글·브랜딩 감각을 바탕으로 MesAile를 창업했어.
+            </p>
+            <p>
+              웹사이트, 세일즈, 컨설팅 커리큘럼, 고객 경험과 운영 프로세스를 혼자 만들면서
+              나는 이미 완성된 판에 들어가는 것보다 판을 처음부터 설계하는 사람이라는 걸 확인했어.
+            </p>
+          </article>
+
+          <article class="chapter rise">
+            <span class="label">04 · Learning Technology</span>
+            <h3>문과 출신이지만 기술의 언어를 직접 배우기로 했어.</h3>
+            <p>
+              기술을 모른 채 바깥에서 관리하고 싶지 않아 백엔드 개발을 배웠어.
+              이후 헬스케어, 컴퓨터 비전 AI와 글로벌 결제 플랫폼에서 일하며
+              개발자와 고객, 기술과 비즈니스 사이를 번역하고 구조화하는 역할로 자연스럽게 이동했어.
+            </p>
+          </article>
+
+          <article class="chapter rise">
+            <span class="label">05 · Going Global</span>
+            <h3>더 큰 물에서 내가 어떻게 움직이는지 확인하고 싶었어.</h3>
+            <p>
+              글로벌 파트너들과 협업하고, 파리 VivaTech 현장에서 영어로 제품을 설명하며
+              새로운 고객과 기회를 만들어본 경험은 내가 세계의 유능한 사람들과 일할 때
+              가장 많은 에너지를 얻는다는 사실을 다시 보여줬어.
+            </p>
+          </article>
+
+          <article class="chapter rise">
+            <span class="label">06 · Now</span>
+            <h3>지금은 기업용 AI가 실제 업무에서 작동하도록 만들고 있어.</h3>
+            <p>
+              기업의 문서와 지식이 AI Agent와 업무 자동화로 연결되는 영역에서 일해.
+              고객의 모호한 요구를 구조화하고 개발자, 기획자, 디자이너와 비즈니스 조직이
+              하나의 방향으로 움직이도록 만드는 일이 현재 내 역할이야.
+            </p>
+            <p>
+              동시에 AI 업무 자동화에 대한 실무 지식을 글과 콘텐츠로 축적하며,
+              앞으로 책과 기업 강의로 확장할 나만의 전문성을 만들고 있어.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="beliefs" id="beliefs">
+      <div class="wrap">
+        <p class="eyebrow rise">What I Believe</p>
+        <h2 class="rise">내가 일하고 살아가는 방식.</h2>
+
+        <div class="belief-grid">
+          <article class="belief rise">
+            <div><span class="number">01</span><h3>가능성은 배경보다 조합에서 나온다.</h3></div>
+            <p>문과, 짧은 경력, 해보지 않은 산업 같은 조건보다 지금 가진 경험을 어떻게 연결할지를 먼저 본다.</p>
+          </article>
+          <article class="belief rise">
+            <div><span class="number">02</span><h3>열심히보다 제대로.</h3></div>
+            <p>나는 워커홀릭이지만 의미 없는 반복은 좋아하지 않는다. 노력은 실제 변화와 결과로 이어져야 한다.</p>
+          </article>
+          <article class="belief rise">
+            <div><span class="number">03</span><h3>실력은 전달될 때 기회가 된다.</h3></div>
+            <p>내용과 본질이 먼저지만, 그것을 상대가 이해할 수 있는 언어와 구조로 보여주는 능력도 중요하다.</p>
+          </article>
+          <article class="belief rise">
+            <div><span class="number">04</span><h3>혼자 앞서가는 것보다 함께 멀리.</h3></div>
+            <p>나와 비슷하게 실행하고 성장하는 사람들과 서로의 가능성을 넓히는 관계를 만들고 싶다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="life">
+      <div class="wrap life-grid">
+        <div>
+          <p class="eyebrow rise">Beyond Work</p>
+          <h2 class="rise">회사 밖에서도<br>삶을 직접 설계해.</h2>
+          <p class="lead rise">
+            건강, 취향, 관계와 자유는 커리어가 끝난 뒤에 챙기는 보상이 아니라
+            지금 함께 만들어가야 하는 삶의 일부라고 생각해.
+          </p>
+
+          <div class="life-list">
+            <article class="life-item rise">
+              <h3>Strong body, clear mind.</h3>
+              <p>2019년부터 헬스를 이어왔고 출근 전 운동과 카페 루틴을 좋아해. 오래 지속한 사람이 가진 힘을 믿어.</p>
+            </article>
+            <article class="life-item rise">
+              <h3>Classics, engines & spirits.</h3>
+              <p>빠른 차, 좋은 공간, 음식과 와인, 패션과 사진을 좋아해. 취향은 비싼 것의 목록보다 선택하는 감각에 가깝다고 생각해.</p>
+            </article>
+            <article class="life-item rise">
+              <h3>Good energy, real connection.</h3>
+              <p>1회성 네트워킹보다 오래 이야기하고 서로의 성장에 실제로 기여할 수 있는 관계를 원해.</p>
+            </article>
+            <article class="life-item rise">
+              <h3>Career, family, freedom, global.</h3>
+              <p>결혼과 육아, 커리어와 글로벌한 삶, 자유를 함께 가져가기 위한 해결 카드를 하나씩 모으는 중이야.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="quote-card rise">
+          <blockquote>
+            “나는 한 가지 역할에<br>
+            나를 가두지 않고,<br>
+            여러 가능성을 하나의<br>
+            방향으로 연결하고 싶어.”
+          </blockquote>
+          <p>
+            More queen than princess.<br>
+            Quiet ambition. Always moving forward.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="connect" id="connect">
+      <div class="wrap">
+        <p class="eyebrow rise">Keep Exploring</p>
+        <h2 class="rise">나의 일과 프로젝트가 궁금하다면<br>메인 사이트에서 이어서 볼 수 있어.</h2>
+        <p class="lead rise">
+          커리어 포트폴리오, 비즈니스 협업, BizTech, Material Shift와 MesAile는
+          각각의 채널에서 더 자세히 소개하고 있어.
+        </p>
+        <div class="connect-actions rise">
+          <a class="button primary" href="index.html">Back to Home</a>
+          <a class="button" href="mailto:yj.shin1q@gmail.com">Email Julia</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Julia Shin · Seoul, Korea · About Me & My Story</footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+    updateNav();
+    window.addEventListener('scroll', updateNav, {passive:true});
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('.rise');
+    if (reduced) {
+      items.forEach(item => item.classList.add('in'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+      items.forEach(item => observer.observe(item));
+    }
+  </script>
+</body>
+</html>
